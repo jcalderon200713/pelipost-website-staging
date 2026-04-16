@@ -35,9 +35,9 @@
     <!-- Nav Links -->
     <ul class="nav__links" role="list">
       <li><a href="#">Products</a></li>
+      <li><a href="#">Community</a></li>
       <li><a href="#">For Facilities</a></li>
       <li><a href="#">Our Story</a></li>
-      <li><a href="#">Resources</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
 
@@ -59,9 +59,9 @@
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul class="mobile-menu__links" role="list">
       <li><a href="#">Products</a></li>
+      <li><a href="#">Community</a></li>
       <li><a href="#">For Facilities</a></li>
       <li><a href="#">Our Story</a></li>
-      <li><a href="#">Resources</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
     <div class="mobile-menu__actions">
@@ -154,20 +154,21 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
-      <!-- Subscribe -->
+      <!-- Connect -->
       <div class="product-card">
         <div class="product-card__icon">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 8h36v32H6z"/>
-            <path d="M6 8l18 16L42 8"/>
-            <path d="M14 22h20M14 28h14"/>
+            <circle cx="16" cy="16" r="6"/>
+            <circle cx="32" cy="16" r="6"/>
+            <circle cx="24" cy="32" r="6"/>
+            <path d="M20 20l4 8M28 20l-4 8"/>
           </svg>
         </div>
-        <h3 class="product-card__title">Subscribe</h3>
-        <p class="product-card__items">Connection Books, PeliPALS, Photo Calendars</p>
-        <p class="product-card__desc">Keep the connection consistent. Automated monthly deliveries of curated photo books and personalized content to your loved one — one less thing to worry about.</p>
+        <h3 class="product-card__title">Connect</h3>
+        <p class="product-card__items">Support Circles, Community &amp; Resources</p>
+        <p class="product-card__desc">You're not alone. Join Support Circles like Waiting Wives &amp; Partners, Parents of Incarcerated, and First-Timers — a community built on positivity and shared experience.</p>
         <a href="#" class="product-card__link">
-          Learn More
+          Join the Community
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
@@ -266,7 +267,86 @@
   </div>
 </section>
 
-<!-- ===== 7. TESTIMONIALS ===== -->
+<!-- ===== 7. SUPPORT CIRCLES / COMMUNITY ===== -->
+<section class="section community" aria-labelledby="community-heading">
+  <div class="container">
+    <div class="community__layout">
+      <div class="community__content reveal">
+        <span class="community__eyebrow">New in the App</span>
+        <h2 id="community-heading">You're not in this alone</h2>
+        <p class="community__desc">Pelipost is more than mail. Our new Community features connect you with thousands of people who understand what you're going through — because they're living it too.</p>
+
+        <div class="community__feature">
+          <h3>Support Circles</h3>
+          <p>Find your people. Join groups like Waiting Wives &amp; Partners, Parents of Incarcerated, and First-Timers. Share stories, ask questions, and lift each other up.</p>
+        </div>
+
+        <div class="community__feature">
+          <h3>Question of the Week</h3>
+          <p>Every week, the community comes together around a single question. Hundreds of responses, thousands of reactions — a reminder that you're part of something bigger.</p>
+        </div>
+
+        <div class="community__feature">
+          <h3>Built on Positivity</h3>
+          <p>This is a space for encouragement, celebration, and support. Real people sharing real moments — first letters sent, milestones celebrated, and hard days made a little lighter.</p>
+        </div>
+
+        <a href="#" class="btn btn--primary btn--large">Download the App</a>
+      </div>
+
+      <div class="community__cards reveal">
+        <!-- Support Circle cards mimicking the app UI -->
+        <div class="circle-card">
+          <div class="circle-card__emoji">💪</div>
+          <h4 class="circle-card__name">Waiting Wives &amp; Partners</h4>
+          <span class="circle-card__members">1,247 members</span>
+          <span class="circle-card__badge circle-card__badge--joined">Joined</span>
+        </div>
+        <div class="circle-card">
+          <div class="circle-card__emoji">👥</div>
+          <h4 class="circle-card__name">Parents of Incarcerated</h4>
+          <span class="circle-card__members">834 members</span>
+          <span class="circle-card__badge">Join</span>
+        </div>
+        <div class="circle-card">
+          <div class="circle-card__emoji">🆕</div>
+          <h4 class="circle-card__name">First-Timers</h4>
+          <span class="circle-card__members">2,156 members</span>
+          <span class="circle-card__badge">Join</span>
+        </div>
+
+        <!-- Question of the Week card -->
+        <div class="qotw-card">
+          <div class="qotw-card__badge">😊 Question of the Week</div>
+          <h4 class="qotw-card__question">“What keeps you going?”</h4>
+          <span class="qotw-card__meta">247 responses · 1,832 reactions</span>
+        </div>
+
+        <!-- Sample community post -->
+        <div class="post-card">
+          <div class="post-card__header">
+            <div class="post-card__avatar">S</div>
+            <div>
+              <span class="post-card__name">Sarah M.</span>
+              <span class="post-card__tag">Celebration</span>
+            </div>
+            <span class="post-card__time">2h ago</span>
+          </div>
+          <p class="post-card__body">Just sent my first letter! The process was so easy through Pelipost. My husband called me crying happy tears when he received it...</p>
+          <div class="post-card__reactions">
+            <span>💪 23</span>
+            <span>💡 5</span>
+            <span>😊 14</span>
+            <span>🙏 5</span>
+            <span>💬 12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. TESTIMONIALS ===== -->
 <section class="section" style="background: var(--color-bg-off);" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="section__header reveal">
@@ -315,7 +395,7 @@
   <div class="container facility__inner">
     <div class="facility__content reveal">
       <span class="facility__eyebrow">For Correctional Facilities</span>
-      <h2 id="facility-heading">Streamline inmate mail processing</h2>
+      <h2 id="facility-heading">Streamline incoming mail processing</h2>
       <p>PelipostPRO gives facilities a modern, secure way to manage incoming mail — reducing contraband risk, lowering operational costs, and improving outcomes for everyone.</p>
       <ul class="facility__features" role="list">
         <li>
