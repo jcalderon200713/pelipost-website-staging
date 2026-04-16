@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Facilities — PelipostPRO | Modernize Mail Processing</title>
+  <meta name="description" content="PelipostPRO gives correctional facilities AI-powered content moderation, real-time delivery tracking, and full compliance. Trusted by 4,000+ facilities nationwide.">
+  <meta property="og:title" content="For Facilities — PelipostPRO">
+  <meta property="og:description" content="AI-powered mail processing, seamless tracking, and full compliance for correctional facilities.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* ============================================================
+       FACILITIES PAGE — PAGE-SPECIFIC STYLES
+       Navy/slate corporate tone: #0a2e45 primary
+    ============================================================ */
+
+    /* ===== NAV OVERRIDES FOR NAVY HERO =====
+       On this page the hero is navy, so the transparent nav needs
+       white text initially. The existing nav background is white/95
+       but we switch it to transparent navy when at the top.
+    */
+    .nav--facilities-top {
+      background: rgba(10, 46, 69, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav--facilities-top .nav__links a,
+    .nav--facilities-top .nav__hamburger,
+    .nav--facilities-top .nav__logo-img {
+      /* Use the white logo when nav is transparent over dark hero */
+    }
+
+    .nav--facilities-top .nav__logo .nav__logo-img--black {
+      display: none;
+    }
+    .nav--facilities-top .nav__logo .nav__logo-img--white {
+      display: block;
+    }
+    .nav--facilities-scrolled .nav__logo .nav__logo-img--black {
+      display: block;
+    }
+    .nav--facilities-scrolled .nav__logo .nav__logo-img--white {
+      display: none;
+    }
+
+    /* Default: show black logo */
+    .nav__logo .nav__logo-img--white { display: none; }
+    .nav__logo .nav__logo-img--black { display: block; }
+
+    /* When at top (over navy hero) show white logo and white text */
+    .nav--facilities-top .nav__links a {
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .nav--facilities-top .nav__links a:hover {
+      color: #fff;
+    }
+    .nav--facilities-top .nav__links a.nav__link--active {
+      color: var(--color-orange);
+    }
+    .nav--facilities-top .nav__hamburger {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .nav--facilities-top .btn--ghost-dark {
+      color: rgba(255, 255, 255, 0.88);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .nav--facilities-top .btn--ghost-dark:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    /* Active nav link */
+    .nav__link--active {
+      color: var(--color-orange) !important;
+      font-weight: 700 !important;
+    }
+
+    /* ===== FACILITIES HERO ===== */
+    .fac-hero {
+      padding-top: 72px;
+      background: linear-gradient(160deg, #0a2e45 0%, #0d3d58 45%, #082436 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle grid texture overlay */
+    .fac-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .fac-hero__inner {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-4);
+      padding-block: var(--space-16) var(--space-12);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .fac-hero__inner {
+        padding-inline: var(--space-8);
+        padding-block: clamp(5rem, 10vw, 7rem) var(--space-16);
+      }
+    }
+
+    .fac-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-5);
+      background: rgba(255, 164, 0, 0.1);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 164, 0, 0.25);
+    }
+
+    .fac-hero__title {
+      font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: var(--space-5);
+      color: #fff;
+      max-width: 740px;
+      letter-spacing: -0.02em;
+    }
+
+    .fac-hero__title span {
+      color: var(--color-orange);
+    }
+
+    .fac-hero__subtitle {
+      font-size: var(--text-base);
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: var(--space-8);
+    }
+
+    .fac-hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-14);
+    }
+
+    .fac-hero__stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-10);
+    }
+
+    @media (min-width: 640px) {
+      .fac-hero__stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fac-stat-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-6);
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+
+    .fac-stat-card:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(255, 164, 0, 0.3);
+    }
+
+    .fac-stat-card__number {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: var(--space-2);
+      letter-spacing: -0.02em;
+    }
+
+    .fac-stat-card__label {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+    }
+
+    .fac-stat-card__accent {
+      width: 32px;
+      height: 3px;
+      background: var(--color-orange);
+      border-radius: 2px;
+      margin: var(--space-3) auto 0;
+    }
+
+    /* ===== SECTION: HOW IT WORKS ===== */
+    .fac-how {
+      padding-block: var(--space-16);
+      background: var(--color-bg-off);
+    }
+
+    @media (min-width: 768px) {
+      .fac-how {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-how__header {
+      text-align: center;
+      margin-bottom: var(--space-14);
+    }
+
+    .fac-how__eyebrow {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0a2e45;
+      opacity: 0.5;
+      margin-bottom: var(--space-3);
+    }
+
+    .fac-how__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .fac-how__title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-orange);
+      margin: var(--space-3) auto 0;
+      border-radius: 2px;
+    }
+
+    .fac-how__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 540px;
+      margin-inline: auto;
+    }
+
+    /* 4-step process */
+    .fac-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .fac-steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+      }
+
+      .fac-steps::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: calc(12.5% + 28px);
+        right: calc(12.5% + 28px);
+        height: 2px;
+        background: repeating-linear-gradient(
+          to right,
+          #0a2e45 0,
+          #0a2e45 6px,
+          transparent 6px,
+          transparent 14px
+        );
+        opacity: 0.2;
+      }
+    }
+
+    .fac-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .fac-step__num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #0a2e45;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.125rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(10, 46, 69, 0.25);
+    }
+
+    .fac-step__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-3);
+      color: #0a2e45;
+      opacity: 0.8;
+    }
+
+    .fac-step__icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .fac-step__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-step__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      max-width: 220px;
+      margin-inline: auto;
+    }
+
+    .fac-step__badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(10, 46, 69, 0.08);
+      color: #0a2e45;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-top: var(--space-3);
+    }
+
+    /* ===== SECTION: PELPOSTPRO OVERVIEW ===== */
+    .fac-pro {
+      padding-block: var(--space-16);
+      background: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .fac-pro {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-pro__inner {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-4);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .fac-pro__inner {
+        padding-inline: var(--space-8);
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-14);
+      }
+    }
+
+    .fac-pro__eyebrow {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-3);
+    }
+
+    .fac-pro__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      line-height: 1.2;
+    }
+
+    .fac-pro__desc {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+
+    .fac-pro__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .fac-pro__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .fac-pro__check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #0a2e45;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .fac-pro__check svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .fac-pro__feature-text strong {
+      display: block;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .fac-pro__feature-text span {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Dashboard mockup illustration */
+    .fac-pro__dashboard {
+      background: #0a2e45;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(10, 46, 69, 0.3);
+      position: relative;
+    }
+
+    .dash-topbar {
+      background: #082030;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dash-topbar__dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dash-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dash-dot--red   { background: #ff5f57; }
+    .dash-dot--yellow{ background: #febc2e; }
+    .dash-dot--green { background: #28c840; }
+
+    .dash-topbar__title {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    .dash-body {
+      padding: 20px;
+    }
+
+    .dash-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .dash-logo-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      background: rgba(255, 164, 0, 0.12);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .dash-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .dash-status__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .dash-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .dash-kpi {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .dash-kpi__val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .dash-kpi__lbl {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* Mini bar chart */
+    .dash-chart {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .dash-chart__title {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 12px;
+    }
+
+    .dash-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 5px;
+      height: 52px;
+    }
+
+    .dash-bar {
+      flex: 1;
+      background: rgba(255,164,0,0.18);
+      border-radius: 3px 3px 0 0;
+      transition: background 200ms;
+      position: relative;
+    }
+
+    .dash-bar--active {
+      background: var(--color-orange);
+    }
+
+    .dash-bar-labels {
+      display: flex;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .dash-bar-label {
+      flex: 1;
+      font-size: 8px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    /* Recent items table */
+    .dash-table {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dash-table__header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .dash-table__header span {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .dash-table__row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 8px 14px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .dash-table__row:last-child {
+      border-bottom: none;
+    }
+
+    .dash-table__row span {
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .dash-table__row span:first-child {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    .dash-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .dash-badge--approved {
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+    }
+
+    .dash-badge--review {
+      background: rgba(251,191,36,0.15);
+      color: #fbbf24;
+    }
+
+    .dash-badge--flagged {
+      background: rgba(248,113,113,0.15);
+      color: #f87171;
+    }
+
+    /* ===== SECTION: CONTENT MODERATION ===== */
+    .fac-mod {
+      padding-block: var(--space-16);
+      background: #f3f6f9;
+    }
+
+    @media (min-width: 768px) {
+      .fac-mod {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-mod__header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .fac-mod__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .fac-mod__title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-orange);
+      margin: var(--space-3) auto 0;
+      border-radius: 2px;
+    }
+
+    .fac-mod__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 540px;
+      margin-inline: auto;
+    }
+
+    .fac-mod__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .fac-mod__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .fac-mod-block {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: var(--space-5);
+      align-items: flex-start;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: box-shadow 200ms ease;
+    }
+
+    .fac-mod-block:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .fac-mod-block__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #0a2e45;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fac-mod-block__icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .fac-mod-block__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-mod-block__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .fac-mod-block__tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      background: #e8f4f8;
+      color: #0a2e45;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-top: var(--space-3);
+    }
+
+    /* Trust signals bar */
+    .fac-trust-bar {
+      background: #0a2e45;
+      padding: var(--space-6) 0;
+    }
+
+    .fac-trust-bar__inner {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .fac-trust-bar__inner {
+        padding-inline: var(--space-8);
+        gap: var(--space-10);
+      }
+    }
+
+    .fac-trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    .fac-trust-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-orange);
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION: INTEGRATION & ONBOARDING ===== */
+    .fac-onboard {
+      padding-block: var(--space-16);
+      background: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .fac-onboard {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-onboard__header {
+      text-align: center;
+      margin-bottom: var(--space-14);
+    }
+
+    .fac-onboard__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .fac-onboard__title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-orange);
+      margin: var(--space-3) auto 0;
+      border-radius: 2px;
+    }
+
+    .fac-onboard__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 500px;
+      margin-inline: auto;
+    }
+
+    /* No-IT callout */
+    .fac-no-it {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: #166534;
+      margin-top: var(--space-3);
+    }
+
+    .fac-no-it svg {
+      width: 16px;
+      height: 16px;
+      color: #16a34a;
+      flex-shrink: 0;
+    }
+
+    /* Timeline */
+    .fac-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      max-width: 760px;
+      margin-inline: auto;
+      position: relative;
+    }
+
+    .fac-timeline::before {
+      content: '';
+      position: absolute;
+      left: 31px;
+      top: 52px;
+      bottom: 52px;
+      width: 2px;
+      background: linear-gradient(to bottom, #0a2e45, rgba(10,46,69,0.1));
+    }
+
+    @media (min-width: 768px) {
+      .fac-timeline {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+      }
+
+      .fac-timeline::before {
+        left: 16.67%;
+        right: 16.67%;
+        top: 26px;
+        bottom: auto;
+        width: auto;
+        height: 2px;
+        background: linear-gradient(to right, #0a2e45, rgba(10,46,69,0.1));
+      }
+    }
+
+    .fac-timeline__step {
+      display: flex;
+      gap: var(--space-5);
+      padding-bottom: var(--space-8);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .fac-timeline__step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0;
+      }
+    }
+
+    .fac-timeline__node {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #0a2e45;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(10, 46, 69, 0.25);
+    }
+
+    .fac-timeline__content {
+      flex: 1;
+    }
+
+    .fac-timeline__week {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-timeline__title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-timeline__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    /* ===== SECTION: CASE STUDIES ===== */
+    .fac-cases {
+      padding-block: var(--space-16);
+      background: var(--color-bg-off);
+    }
+
+    @media (min-width: 768px) {
+      .fac-cases {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-cases__header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .fac-cases__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .fac-cases__title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-orange);
+      margin: var(--space-3) auto 0;
+      border-radius: 2px;
+    }
+
+    .fac-cases__subtitle {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 540px;
+      margin-inline: auto;
+    }
+
+    .fac-cases__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .fac-cases__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .fac-case-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: box-shadow 200ms ease, transform 200ms ease;
+    }
+
+    .fac-case-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .fac-case-card__header {
+      background: #0a2e45;
+      padding: var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .fac-case-card__icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-orange);
+    }
+
+    .fac-case-card__icon-wrap svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .fac-case-card__type {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+
+    .fac-case-card__name {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .fac-case-card__body {
+      padding: var(--space-6);
+    }
+
+    .fac-case-section {
+      margin-bottom: var(--space-5);
+    }
+
+    .fac-case-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
+    }
+
+    .fac-case-text {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .fac-case-card__outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      padding: var(--space-5) var(--space-6);
+      background: #f8f9fb;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .fac-outcome-stat {
+      text-align: center;
+    }
+
+    .fac-outcome-stat__num {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: #0a2e45;
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .fac-outcome-stat__lbl {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      line-height: 1.3;
+    }
+
+    /* ===== SECTION: REQUEST DEMO ===== */
+    .fac-demo {
+      padding-block: var(--space-16);
+      background: linear-gradient(160deg, #0a2e45 0%, #0d3d58 60%, #082436 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fac-demo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+      .fac-demo {
+        padding-block: var(--space-20);
+      }
+    }
+
+    .fac-demo__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-4);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .fac-demo__inner {
+        padding-inline: var(--space-8);
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-14);
+      }
+    }
+
+    .fac-demo__eyebrow {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-4);
+      background: rgba(255,164,0,0.1);
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,164,0,0.25);
+    }
+
+    .fac-demo__title {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: var(--space-4);
+    }
+
+    .fac-demo__desc {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+
+    .fac-demo__bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .fac-demo__bullets li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .fac-demo__bullets li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-orange);
+      flex-shrink: 0;
+    }
+
+    /* Demo form */
+    .fac-demo__form-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: var(--space-8);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .fac-demo__form-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-demo__form-subtitle {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .fac-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .fac-form__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    @media (min-width: 480px) {
+      .fac-form__row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .fac-form__field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .fac-form__label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .fac-form__input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: #fff;
+      outline: none;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+
+    .fac-form__input:focus {
+      border-color: #0a2e45;
+      box-shadow: 0 0 0 3px rgba(10, 46, 69, 0.1);
+    }
+
+    .fac-form__input::placeholder {
+      color: var(--color-text-light);
+    }
+
+    .fac-form__submit {
+      background: #0a2e45;
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 15px 32px;
+      font-size: var(--text-base);
+      font-weight: 700;
+      font-family: var(--font-body);
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .fac-form__submit:hover {
+      background: #0d3d58;
+    }
+
+    .fac-form__submit:active {
+      transform: translateY(1px);
+    }
+
+    .fac-form__submit svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .fac-form__privacy {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    /* ===== SECTION-LEVEL CONTAINER OVERRIDE =====
+       (fac sections use their own inner div with max-width) */
+    .fac-section-container {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .fac-section-container {
+        padding-inline: var(--space-8);
+      }
+    }
+
+    /* ===== SCROLL REVEAL OVERRIDES ===== */
+    /* Already defined in style.css — just use same classes */
+
+    /* ===== MOBILE ADJUSTMENTS ===== */
+    @media (max-width: 767px) {
+      .fac-hero__stats {
+        grid-template-columns: 1fr;
+      }
+      .fac-timeline::before {
+        display: none;
+      }
+      .fac-timeline__step {
+        padding-left: var(--space-3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--facilities-top" id="facilityNav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <!-- Logo — dual images for light/dark switching -->
+    <a href="./index.html" class="nav__logo" aria-label="Pelipost home">
+      <img src="./assets/logo-white.webp" alt="Pelipost" class="nav__logo-img nav__logo-img--white" width="140" height="36">
+      <img src="./assets/logo-black.webp" alt="Pelipost" class="nav__logo-img nav__logo-img--black" width="140" height="36">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./index.html#community-heading">Community</a></li>
+      <li><a href="./facilities.html" class="nav__link--active" aria-current="page">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="#demo-section">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <a href="#" class="btn btn--ghost-dark btn--small nav__btn-desktop">Log In</a>
+      <a href="#demo-section" class="btn btn--primary btn--small nav__btn-desktop">Request Demo</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./index.html#community-heading">Community</a></li>
+      <li><a href="./facilities.html" aria-current="page">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="#demo-section">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a href="#" class="btn btn--ghost-dark">Log In</a>
+      <a href="#demo-section" class="btn btn--primary">Request Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 1. HERO ===== -->
+<header class="fac-hero" id="main">
+  <div class="fac-hero__inner">
+    <span class="fac-hero__eyebrow reveal">
+      <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 110 2 1 1 0 010-2zm0 3a1 1 0 011 1v3a1 1 0 01-2 0V8a1 1 0 011-1z"/></svg>
+      For Correctional Facilities
+    </span>
+
+    <h1 class="fac-hero__title reveal">
+      Modernize Mail Processing<br>
+      <span>with Pelipost</span>
+    </h1>
+
+    <p class="fac-hero__subtitle reveal">
+      AI-powered content moderation, seamless delivery tracking, and full compliance — trusted by 4,000+ facilities across the United States.
+    </p>
+
+    <div class="fac-hero__ctas reveal">
+      <a href="#demo-section" class="btn btn--primary btn--large">Request a Demo</a>
+      <a href="#" class="btn btn--ghost-white btn--large">Download Overview</a>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="fac-hero__stats reveal-stagger">
+      <div class="fac-stat-card">
+        <div class="fac-stat-card__number">4,000+</div>
+        <div class="fac-stat-card__label">Facilities Nationwide</div>
+        <div class="fac-stat-card__accent"></div>
+      </div>
+      <div class="fac-stat-card">
+        <div class="fac-stat-card__number">20M+</div>
+        <div class="fac-stat-card__label">Items Delivered</div>
+        <div class="fac-stat-card__accent"></div>
+      </div>
+      <div class="fac-stat-card">
+        <div class="fac-stat-card__number">99.7%</div>
+        <div class="fac-stat-card__label">Compliance Rate</div>
+        <div class="fac-stat-card__accent"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 2. HOW IT WORKS ===== -->
+<section class="fac-how" aria-labelledby="how-it-works-heading">
+  <div class="fac-section-container">
+    <div class="fac-how__header reveal">
+      <div class="fac-how__eyebrow">Process Overview</div>
+      <h2 class="fac-how__title" id="how-it-works-heading">Zero effort for your staff</h2>
+      <p class="fac-how__subtitle">From family submission to facility delivery — every step is automated, screened, and compliant.</p>
+    </div>
+
+    <div class="fac-steps reveal-stagger">
+      <!-- Step 1 -->
+      <div class="fac-step">
+        <div class="fac-step__num">1</div>
+        <div class="fac-step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="6" width="24" height="32" rx="3"/>
+            <path d="M12 16h12M12 22h8"/>
+            <circle cx="36" cy="32" r="8" fill="#0a2e45" stroke="none"/>
+            <path d="M33 32l2 2 4-4" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="fac-step__title">Families Submit</h3>
+        <p class="fac-step__desc">Families upload photos, letters, and cards through the Pelipost app. Facility rules are enforced at the point of submission.</p>
+        <span class="fac-step__badge">App &amp; Web</span>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="fac-step">
+        <div class="fac-step__num">2</div>
+        <div class="fac-step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="12" width="32" height="24" rx="3"/>
+            <circle cx="24" cy="24" r="6"/>
+            <path d="M16 12V8M32 12V8M16 36v4M32 36v4"/>
+            <path d="M21 24l2 2 4-4" stroke="#0a2e45" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="fac-step__title">AI Screens Content</h3>
+        <p class="fac-step__desc">Our AI pipeline automatically reviews every submission for prohibited content. Human review is triggered only for flagged edge cases.</p>
+        <span class="fac-step__badge">Automated</span>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="fac-step">
+        <div class="fac-step__num">3</div>
+        <div class="fac-step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="18" width="36" height="22" rx="3"/>
+            <path d="M14 26h8M14 32h5"/>
+            <path d="M30 26h4v8h-4z"/>
+            <path d="M6 18l6-10h24l6 10"/>
+          </svg>
+        </div>
+        <h3 class="fac-step__title">Print &amp; Ship</h3>
+        <p class="fac-step__desc">Approved mail is professionally printed in our facility and shipped via USPS — arriving in standard white envelopes, compliant with all rules.</p>
+        <span class="fac-step__badge">2–5 Days</span>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="fac-step">
+        <div class="fac-step__num">4</div>
+        <div class="fac-step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 38h32M12 38V22l12-14 12 14v16"/>
+            <path d="M20 38v-8h8v8"/>
+            <path d="M24 8v4"/>
+          </svg>
+        </div>
+        <h3 class="fac-step__title">Facility Receives</h3>
+        <p class="fac-step__desc">Mail arrives pre-screened, tracked, and fully compliant. Your staff distributes standard mail — no additional processing required.</p>
+        <span class="fac-step__badge">Zero Overhead</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. PELIPOSTPRO OVERVIEW ===== -->
+<section class="fac-pro" aria-labelledby="pro-overview-heading">
+  <div class="fac-pro__inner">
+    <!-- Left: Feature list -->
+    <div class="reveal">
+      <div class="fac-pro__eyebrow">PelipostPRO</div>
+      <h2 class="fac-pro__title" id="pro-overview-heading">A dedicated operations platform for your facility</h2>
+      <p class="fac-pro__desc">PelipostPRO gives administrators full visibility and control over incoming mail — with no installation, no IT changes, and no cost to the facility.</p>
+
+      <ul class="fac-pro__features">
+        <li class="fac-pro__feature">
+          <div class="fac-pro__check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div class="fac-pro__feature-text">
+            <strong>AI Content Review</strong>
+            <span>Automated multi-layer screening for prohibited text, imagery, and contraband references before printing.</span>
+          </div>
+        </li>
+        <li class="fac-pro__feature">
+          <div class="fac-pro__check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div class="fac-pro__feature-text">
+            <strong>Real-Time Delivery Tracking</strong>
+            <span>Full audit trail from submission to delivery. Every item timestamped and searchable in your dashboard.</span>
+          </div>
+        </li>
+        <li class="fac-pro__feature">
+          <div class="fac-pro__check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div class="fac-pro__feature-text">
+            <strong>Custom Facility Rules</strong>
+            <span>Configure page limits, format restrictions, content policies, and approved sender lists specific to your facility.</span>
+          </div>
+        </li>
+        <li class="fac-pro__feature">
+          <div class="fac-pro__check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div class="fac-pro__feature-text">
+            <strong>Bulk Processing &amp; Volume Management</strong>
+            <span>Handle high mail volumes efficiently. Batch review tools and automated routing reduce staff workload.</span>
+          </div>
+        </li>
+        <li class="fac-pro__feature">
+          <div class="fac-pro__check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div class="fac-pro__feature-text">
+            <strong>Compliance Reporting</strong>
+            <span>Exportable reports for audits, inspections, and accreditation reviews. Data retained per your retention policy.</span>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#demo-section" class="btn btn--primary btn--large">See PelipostPRO in Action</a>
+    </div>
+
+    <!-- Right: Dashboard mockup (CSS illustration) -->
+    <div class="reveal">
+      <div class="fac-pro__dashboard" role="img" aria-label="PelipostPRO dashboard mockup showing mail volume chart and review queue">
+        <!-- Window chrome -->
+        <div class="dash-topbar">
+          <div class="dash-topbar__dots">
+            <div class="dash-dot dash-dot--red"></div>
+            <div class="dash-dot dash-dot--yellow"></div>
+            <div class="dash-dot dash-dot--green"></div>
+          </div>
+          <div class="dash-topbar__title">PelipostPRO Dashboard</div>
+          <div style="width:52px"></div>
+        </div>
+
+        <div class="dash-body">
+          <!-- Header row -->
+          <div class="dash-header-row">
+            <span class="dash-logo-pill">PelipostPRO</span>
+            <div class="dash-status">
+              <div class="dash-status__dot"></div>
+              All systems operational
+            </div>
+          </div>
+
+          <!-- KPI row -->
+          <div class="dash-kpis">
+            <div class="dash-kpi">
+              <span class="dash-kpi__val">247</span>
+              <span class="dash-kpi__lbl">Items Today</span>
+            </div>
+            <div class="dash-kpi">
+              <span class="dash-kpi__val">3</span>
+              <span class="dash-kpi__lbl">In Review</span>
+            </div>
+            <div class="dash-kpi">
+              <span class="dash-kpi__val">99.6%</span>
+              <span class="dash-kpi__lbl">Compliance</span>
+            </div>
+          </div>
+
+          <!-- Bar chart -->
+          <div class="dash-chart">
+            <div class="dash-chart__title">Mail Volume — This Week</div>
+            <div class="dash-bars">
+              <div class="dash-bar" style="height:38%"></div>
+              <div class="dash-bar" style="height:55%"></div>
+              <div class="dash-bar" style="height:62%"></div>
+              <div class="dash-bar dash-bar--active" style="height:72%"></div>
+              <div class="dash-bar" style="height:48%"></div>
+              <div class="dash-bar" style="height:85%"></div>
+              <div class="dash-bar" style="height:68%"></div>
+            </div>
+            <div class="dash-bar-labels">
+              <span class="dash-bar-label">Mon</span>
+              <span class="dash-bar-label">Tue</span>
+              <span class="dash-bar-label">Wed</span>
+              <span class="dash-bar-label">Thu</span>
+              <span class="dash-bar-label">Fri</span>
+              <span class="dash-bar-label">Sat</span>
+              <span class="dash-bar-label">Sun</span>
+            </div>
+          </div>
+
+          <!-- Review queue table -->
+          <div class="dash-table">
+            <div class="dash-table__header">
+              <span>Resident ID</span>
+              <span>Type</span>
+              <span>Status</span>
+            </div>
+            <div class="dash-table__row">
+              <span>ID-4821-A</span>
+              <span>Photo Print</span>
+              <span><span class="dash-badge dash-badge--approved">Approved</span></span>
+            </div>
+            <div class="dash-table__row">
+              <span>ID-3197-B</span>
+              <span>Letter</span>
+              <span><span class="dash-badge dash-badge--review">In Review</span></span>
+            </div>
+            <div class="dash-table__row">
+              <span>ID-5503-C</span>
+              <span>Postcard</span>
+              <span><span class="dash-badge dash-badge--approved">Approved</span></span>
+            </div>
+            <div class="dash-table__row">
+              <span>ID-2284-D</span>
+              <span>Photo Print</span>
+              <span><span class="dash-badge dash-badge--flagged">Flagged</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. CONTENT MODERATION & COMPLIANCE ===== -->
+<section class="fac-mod" aria-labelledby="moderation-heading">
+  <div class="fac-section-container">
+    <div class="fac-mod__header reveal">
+      <h2 class="fac-mod__title" id="moderation-heading">Compliance built into every step</h2>
+      <p class="fac-mod__subtitle">Our moderation pipeline combines AI precision with human oversight to ensure every item meets your facility's standards.</p>
+    </div>
+
+    <div class="fac-mod__grid reveal-stagger">
+      <!-- Block 1: AI Pipeline -->
+      <div class="fac-mod-block">
+        <div class="fac-mod-block__icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="22" height="22" rx="4"/>
+            <path d="M7 13h4M15 13h4M13 7v4M13 15v4"/>
+            <circle cx="13" cy="13" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="fac-mod-block__title">Multi-Layer AI Screening</h3>
+          <p class="fac-mod-block__desc">Every submission passes through automated text analysis, image classification, and metadata checks before it is printed or shipped. Custom keyword lists and prohibited image categories are configurable per facility.</p>
+          <span class="fac-mod-block__tag">Automated</span>
+        </div>
+      </div>
+
+      <!-- Block 2: Human Review -->
+      <div class="fac-mod-block">
+        <div class="fac-mod-block__icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13" cy="9" r="4"/>
+            <path d="M4 22c0-4.4 4-8 9-8s9 3.6 9 8"/>
+            <path d="M17 14l2 2 4-4" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="fac-mod-block__title">Human Review Fallback</h3>
+          <p class="fac-mod-block__desc">Edge cases and flagged submissions escalate to trained Pelipost reviewers — never facility staff. Decisions are documented with clear reasoning and stored in your audit trail.</p>
+          <span class="fac-mod-block__tag">SLA: 4 Hours</span>
+        </div>
+      </div>
+
+      <!-- Block 3: PREA Compliance -->
+      <div class="fac-mod-block">
+        <div class="fac-mod-block__icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2l9 4v8c0 5-4 9-9 11C8 23 4 19 4 14V6l9-4z"/>
+            <path d="M9 13l3 3 5-5"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="fac-mod-block__title">PREA &amp; Regulatory Compliance</h3>
+          <p class="fac-mod-block__desc">Our content policies are built to align with PREA guidelines, ACA standards, and state DOC requirements. Policies update automatically as regulations change — no action required from your team.</p>
+          <span class="fac-mod-block__tag">PREA Aligned</span>
+        </div>
+      </div>
+
+      <!-- Block 4: Facility-Specific Rules -->
+      <div class="fac-mod-block">
+        <div class="fac-mod-block__icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h18M4 12h12M4 18h8"/>
+            <path d="M20 16l-3 3-2-2"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="fac-mod-block__title">Facility-Specific Rule Configuration</h3>
+          <p class="fac-mod-block__desc">Set maximum photo counts, letter page limits, restricted content categories, blackout periods, and approved sender lists. Rules apply at submission — rejections are communicated to senders instantly.</p>
+          <span class="fac-mod-block__tag">Fully Customizable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Signals Bar -->
+<div class="fac-trust-bar" aria-label="Security and compliance certifications">
+  <div class="fac-trust-bar__inner">
+    <div class="fac-trust-item">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l7.5 3.33V10c0 4.17-3.17 7.5-7.5 9-4.33-1.5-7.5-4.83-7.5-9V4.33L10 1z"/></svg>
+      SOC 2 Type II Compliant
+    </div>
+    <div class="fac-trust-item">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+      99.9% Uptime SLA
+    </div>
+    <div class="fac-trust-item">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3 1h10v2H5V6zm0 4h10v2H5v-2zm0 4h6v2H5v-2z"/></svg>
+      Full Audit Trail
+    </div>
+    <div class="fac-trust-item">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm5 6a2 2 0 10-4 0 2 2 0 004 0zm-13 0a2 2 0 10-4 0 2 2 0 004 0zM2 14a5 5 0 019.6-2h-.2A5 5 0 012 14zm16-2a5 5 0 00-9.6 2h.2A5 5 0 0118 12z"/></svg>
+      Dedicated Account Manager
+    </div>
+    <div class="fac-trust-item">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12H9v4l3 3 1.4-1.4L11 9.17V6z"/></svg>
+      24/7 Technical Support
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5. INTEGRATION & ONBOARDING ===== -->
+<section class="fac-onboard" aria-labelledby="onboarding-heading">
+  <div class="fac-section-container">
+    <div class="fac-onboard__header reveal">
+      <h2 class="fac-onboard__title" id="onboarding-heading">Live in 3 weeks, not 3 months</h2>
+      <p class="fac-onboard__subtitle">Our onboarding team handles every technical detail. Your staff won't need to configure a single setting.</p>
+      <div style="display:flex;justify-content:center;margin-top:var(--space-3);">
+        <div class="fac-no-it">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8l4 4 6-7"/></svg>
+          No IT changes required
+        </div>
+      </div>
+    </div>
+
+    <div class="fac-timeline reveal-stagger">
+      <!-- Step 1 -->
+      <div class="fac-timeline__step">
+        <div class="fac-timeline__node">1</div>
+        <div class="fac-timeline__content">
+          <span class="fac-timeline__week">Week 1</span>
+          <h3 class="fac-timeline__title">Discovery &amp; Consultation</h3>
+          <p class="fac-timeline__desc">Our team meets with facility administrators to document your mail policies, volume requirements, and any special configurations. We handle all paperwork and agreements.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="fac-timeline__step">
+        <div class="fac-timeline__node">2</div>
+        <div class="fac-timeline__content">
+          <span class="fac-timeline__week">Weeks 2–3</span>
+          <h3 class="fac-timeline__title">Configuration &amp; Integration</h3>
+          <p class="fac-timeline__desc">We configure your PelipostPRO environment with your facility rules, set up your administrative accounts, and run test mail batches to validate compliance screening accuracy.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="fac-timeline__step">
+        <div class="fac-timeline__node">3</div>
+        <div class="fac-timeline__content">
+          <span class="fac-timeline__week">Week 3+</span>
+          <h3 class="fac-timeline__title">Go-Live &amp; Ongoing Support</h3>
+          <p class="fac-timeline__desc">Your facility goes live with dedicated account management and 24/7 support. We notify your resident population directly — reducing inbound staff inquiries from day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. CASE STUDIES ===== -->
+<section class="fac-cases" aria-labelledby="case-studies-heading">
+  <div class="fac-section-container">
+    <div class="fac-cases__header reveal">
+      <h2 class="fac-cases__title" id="case-studies-heading">Facilities seeing real results</h2>
+      <p class="fac-cases__subtitle">From large state prisons to county detention centers, Pelipost adapts to facilities of every size and type.</p>
+    </div>
+
+    <div class="fac-cases__grid reveal-stagger">
+      <!-- Case Study 1: State Prison -->
+      <div class="fac-case-card">
+        <div class="fac-case-card__header">
+          <div class="fac-case-card__icon-wrap">
+            <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 22V10l9-7 9 7v12M10 22v-6h6v6"/>
+              <rect x="11" y="14" width="4" height="4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="fac-case-card__type">State Correctional Facility</div>
+            <div class="fac-case-card__name">Midwestern State Prison Complex</div>
+          </div>
+        </div>
+        <div class="fac-case-card__body">
+          <div class="fac-case-section">
+            <div class="fac-case-label">Challenge</div>
+            <p class="fac-case-text">A 3,200-bed facility processing over 1,400 pieces of mail per week manually. Staff reported an average of 18 staff-hours per week on mail inspection and a 12% return rate for rule violations.</p>
+          </div>
+          <div class="fac-case-section">
+            <div class="fac-case-label">Solution</div>
+            <p class="fac-case-text">Pelipost replaced all physical mail processing for personal photos and printed correspondence. Custom rules were configured to match the facility's existing mail policy exactly.</p>
+          </div>
+          <div class="fac-case-section" style="margin-bottom:0">
+            <div class="fac-case-label">Outcome</div>
+            <p class="fac-case-text">Mail-related staff hours reduced to near zero. Contraband incidents involving mail dropped significantly in the first quarter after launch.</p>
+          </div>
+        </div>
+        <div class="fac-case-card__outcomes">
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">~0</span>
+            <span class="fac-outcome-stat__lbl">Mail Staff Hours / Week</span>
+          </div>
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">99.8%</span>
+            <span class="fac-outcome-stat__lbl">Compliance Rate</span>
+          </div>
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">3 Wks</span>
+            <span class="fac-outcome-stat__lbl">To Full Deployment</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 2: County Jail -->
+      <div class="fac-case-card">
+        <div class="fac-case-card__header">
+          <div class="fac-case-card__icon-wrap">
+            <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="8" width="20" height="15" rx="2"/>
+              <path d="M8 8V5a5 5 0 0110 0v3"/>
+              <path d="M13 14v4"/>
+              <circle cx="13" cy="13" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div class="fac-case-card__type">County Detention Center</div>
+            <div class="fac-case-card__name">Southeast Regional County Jail</div>
+          </div>
+        </div>
+        <div class="fac-case-card__body">
+          <div class="fac-case-section">
+            <div class="fac-case-label">Challenge</div>
+            <p class="fac-case-text">A 640-bed county facility with high resident turnover. Family members frequently violated mail rules unknowingly, generating grievances and consuming correctional officer time.</p>
+          </div>
+          <div class="fac-case-section">
+            <div class="fac-case-label">Solution</div>
+            <p class="fac-case-text">Pelipost was implemented with the jail's specific booking and housing unit rules encoded. Real-time notifications keep families informed of submission status instantly, reducing inbound calls to staff.</p>
+          </div>
+          <div class="fac-case-section" style="margin-bottom:0">
+            <div class="fac-case-label">Outcome</div>
+            <p class="fac-case-text">Mail grievances related to rejected correspondence fell by over 80%. Family satisfaction improved markedly, and staff reported significantly fewer mail-related interruptions.</p>
+          </div>
+        </div>
+        <div class="fac-case-card__outcomes">
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">80%↓</span>
+            <span class="fac-outcome-stat__lbl">Mail Grievances</span>
+          </div>
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">$0</span>
+            <span class="fac-outcome-stat__lbl">Cost to Facility</span>
+          </div>
+          <div class="fac-outcome-stat">
+            <span class="fac-outcome-stat__num">2 Wks</span>
+            <span class="fac-outcome-stat__lbl">To Full Deployment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. REQUEST DEMO ===== -->
+<section class="fac-demo" id="demo-section" aria-labelledby="demo-heading">
+  <div class="fac-demo__inner">
+    <!-- Left: copy -->
+    <div class="reveal">
+      <div class="fac-demo__eyebrow">Request a Demo</div>
+      <h2 class="fac-demo__title" id="demo-heading">See PelipostPRO in your facility</h2>
+      <p class="fac-demo__desc">Schedule a personalized walkthrough with a Pelipost facility specialist. We'll show you how the platform works, answer your compliance questions, and configure a demo environment around your specific mail policies.</p>
+
+      <ul class="fac-demo__bullets">
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          30-minute live demo tailored to your facility type
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Compliance and security documentation provided upfront
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          No commitment — evaluate at your own pace
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Zero cost to facilities — ever
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Demo form -->
+    <div class="reveal">
+      <div class="fac-demo__form-wrap">
+        <h3 class="fac-demo__form-title">Request a Demo</h3>
+        <p class="fac-demo__form-subtitle">A facility specialist will reach out within one business day.</p>
+
+        <form class="fac-form" id="demoForm" onsubmit="handleDemoSubmit(event)" novalidate>
+          <div class="fac-form__row">
+            <div class="fac-form__field">
+              <label class="fac-form__label" for="demo-first-name">First Name</label>
+              <input type="text" id="demo-first-name" name="first_name" class="fac-form__input" placeholder="Jane" autocomplete="given-name">
+            </div>
+            <div class="fac-form__field">
+              <label class="fac-form__label" for="demo-last-name">Last Name</label>
+              <input type="text" id="demo-last-name" name="last_name" class="fac-form__input" placeholder="Doe" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="fac-form__field">
+            <label class="fac-form__label" for="demo-title">Title / Role</label>
+            <input type="text" id="demo-title" name="title" class="fac-form__input" placeholder="e.g. Deputy Warden, Mail Room Supervisor" autocomplete="organization-title">
+          </div>
+
+          <div class="fac-form__field">
+            <label class="fac-form__label" for="demo-facility">Facility Name</label>
+            <input type="text" id="demo-facility" name="facility" class="fac-form__input" placeholder="e.g. Clark County Detention Center" autocomplete="organization">
+          </div>
+
+          <div class="fac-form__row">
+            <div class="fac-form__field">
+              <label class="fac-form__label" for="demo-email">Work Email</label>
+              <input type="email" id="demo-email" name="email" class="fac-form__input" placeholder="jane@facility.gov" autocomplete="email">
+            </div>
+            <div class="fac-form__field">
+              <label class="fac-form__label" for="demo-phone">Phone Number</label>
+              <input type="tel" id="demo-phone" name="phone" class="fac-form__input" placeholder="(555) 000-0000" autocomplete="tel">
+            </div>
+          </div>
+
+          <button type="submit" class="fac-form__submit">
+            Request Demo
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9h12M11 5l4 4-4 4"/></svg>
+          </button>
+
+          <p class="fac-form__privacy">Your information is never shared. By submitting, you agree to our <a href="#" style="color:var(--color-text-muted);text-decoration:underline;">Privacy Policy</a>.</p>
+        </form>
+
+        <!-- Success message (hidden by default) -->
+        <div id="demoSuccess" style="display:none;text-align:center;padding:var(--space-8) 0;">
+          <div style="width:56px;height:56px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" width="28" height="28"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h4 style="font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">Request Received</h4>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);">A Pelipost facility specialist will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Pelipost home">
+          <img src="./assets/logo-white.webp" alt="Pelipost" class="footer__logo-img" width="140" height="36">
+        </a>
+        <div class="footer__tagline">Keeping Families Connected</div>
+        <p>Helping families stay connected with incarcerated loved ones through photos, letters, and more.</p>
+      </div>
+
+      <!-- Products -->
+      <div class="footer__col">
+        <h4>Products</h4>
+        <ul role="list">
+          <li><a href="./products.html">Photo Prints</a></li>
+          <li><a href="./products.html">Postcards</a></li>
+          <li><a href="./products.html">Letters</a></li>
+          <li><a href="./products.html">Greeting Cards</a></li>
+          <li><a href="./products.html">Connection Books</a></li>
+          <li><a href="./products.html">PeliPALS</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="./story.html">Our Story</a></li>
+          <li><a href="./index.html#community-heading">Community</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- For Facilities -->
+      <div class="footer__col">
+        <h4>For Facilities</h4>
+        <ul role="list">
+          <li><a href="./facilities.html">Overview</a></li>
+          <li><a href="./facilities.html#pro-overview-heading">PelipostPRO</a></li>
+          <li><a href="./facilities.html#case-studies-heading">Case Studies</a></li>
+          <li><a href="./facilities.html#demo-section">Request Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul role="list">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Facility Lookup</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        &copy; 2025 Pelipost, Inc. All rights reserved.
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+<script>
+/* ===== FACILITIES PAGE SCRIPTS ===== */
+(function () {
+  'use strict';
+
+  // Nav transparent-on-dark behavior for facilities page
+  var nav = document.getElementById('facilityNav');
+
+  function updateFacNav() {
+    if (window.scrollY > 60) {
+      nav.classList.remove('nav--facilities-top');
+      nav.classList.add('nav--facilities-scrolled');
+    } else {
+      nav.classList.add('nav--facilities-top');
+      nav.classList.remove('nav--facilities-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateFacNav, { passive: true });
+  updateFacNav(); // run on load
+
+  // Demo form handler
+  window.handleDemoSubmit = function (e) {
+    e.preventDefault();
+    var form = document.getElementById('demoForm');
+    var success = document.getElementById('demoSuccess');
+    form.style.display = 'none';
+    success.style.display = 'block';
+  };
+})();
+</script>
+</body>
+</html>
