@@ -106,6 +106,11 @@
   flex-shrink: 0;
 }
 
+.nav__logo-img {
+  height: 32px;
+  width: auto;
+}
+
 .nav__logo-text {
   font-size: 1.375rem;
   font-weight: 700;
@@ -346,6 +351,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.hero__trust-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-orange);
+  flex-shrink: 0;
 }
 
 .hero__image {
@@ -722,25 +750,7 @@
   margin-bottom: var(--space-6);
 }
 
-.mission__stats {
-  display: flex;
-  gap: var(--space-8);
-  margin-bottom: var(--space-6);
-  flex-wrap: wrap;
-}
-
-.mission__stat-number {
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-brand-teal);
-  line-height: 1.2;
-}
-
-.mission__stat-label {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  font-weight: 500;
-}
+/* mission__stats removed — stats now in trust bar and outcomes section */
 
 .mission__image {
   border-radius: var(--radius-lg);
@@ -815,16 +825,7 @@
   flex-shrink: 0;
 }
 
-.facility__image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  opacity: 0.9;
-}
-
-.facility__image img {
-  width: 100%;
-  border-radius: var(--radius-lg);
-}
+/* facility__image styles removed — replaced by facility__stats cards */
 
 /* ===== APP CTA ===== */
 .app-cta {
@@ -855,44 +856,114 @@
   flex-wrap: wrap;
 }
 
+/* App badge styles moved to new section above footer */
+
+/* ===== OUTCOMES SECTION ===== */
+.outcomes {
+  background: var(--color-light-teal);
+}
+
+.outcomes__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .outcomes__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.outcome-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.outcome-card__stat {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-brand-teal);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.outcome-card__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ===== FACILITY SECTION UPDATES ===== */
+.facility__eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: var(--space-3);
+}
+
+.facility__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.facility__stats {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.facility__stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.facility__stat-number {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+
+.facility__stat-label {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== APP BADGE IMAGES ===== */
 .app-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  background: rgba(0, 0, 0, 0.25);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: var(--text-sm);
-  transition: background var(--transition-speed) ease;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .app-badge:hover {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.app-badge svg {
-  width: 24px;
-  height: 24px;
-}
-
-.app-badge__text {
-  text-align: left;
-  line-height: 1.2;
-}
-
-.app-badge__text small {
-  font-size: 10px;
-  font-weight: 400;
-  display: block;
+  background: none;
   opacity: 0.85;
 }
 
-.app-badge__text span {
-  font-size: 16px;
-  font-weight: 700;
+.app-badge img {
+  height: 44px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* ===== FOOTER LOGO IMG ===== */
+.footer__logo-img {
+  height: 28px;
+  width: auto;
+  margin-bottom: var(--space-1);
 }
 
 /* ===== FOOTER ===== */
@@ -1029,12 +1100,7 @@
   height: 18px;
 }
 
-.footer__legacy {
-  text-align: center;
-  padding: var(--space-3) 0;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.25);
-}
+/* footer__legacy removed */
 
 /* ===== SCROLL ANIMATIONS ===== */
 .reveal {
