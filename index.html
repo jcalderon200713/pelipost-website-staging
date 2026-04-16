@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelipost — Keeping Families Connected | Send Photos & Letters to Incarcerated Loved Ones</title>
+  <meta name="description" content="Pelipost helps families stay connected with incarcerated loved ones. Send photos, letters, postcards, greeting cards and more to any correctional facility in the United States.">
+  <meta property="og:title" content="Pelipost — Keeping Families Connected">
+  <meta property="og:description" content="Send photos, letters, postcards, greeting cards and more to your incarcerated loved one. Delivered to any facility in the US.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/community.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
+
+<!-- ===== 1. NAVIGATION ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <!-- Logo -->
+    <a href="#" class="nav__logo" aria-label="Pelipost home">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="20" r="14" fill="#ffa400"/>
+        <ellipse cx="24" cy="22" rx="10" ry="8" fill="#fff" opacity="0.3"/>
+        <path d="M18 20c0 0-2 10 6 16c8-6 6-16 6-16" fill="#ffa400"/>
+        <path d="M20 18c-1-4 0-8 4-10c4 2 5 6 4 10" fill="#e69200"/>
+        <circle cx="20" cy="17" r="1.5" fill="#fff"/>
+        <path d="M24 24l-6 6h12l-6-6z" fill="#fff" opacity="0.85"/>
+        <path d="M18 30l6-6 6 6" stroke="#e69200" stroke-width="1.2" fill="none"/>
+        <path d="M34 16c2-1 5 0 6 2c-1 2-4 2-6 1" fill="#e69200"/>
+      </svg>
+      <span class="nav__logo-text">Pelipost</span>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav__links" role="list">
+      <li><a href="#">Products</a></li>
+      <li><a href="#">For Facilities</a></li>
+      <li><a href="#">Our Story</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <a href="#" class="btn btn--ghost-dark btn--small nav__btn-desktop">Log In</a>
+      <a href="#" class="btn btn--primary btn--small nav__btn-desktop">Get Started</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="#">Products</a></li>
+      <li><a href="#">For Facilities</a></li>
+      <li><a href="#">Our Story</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a href="#" class="btn btn--ghost-dark">Log In</a>
+      <a href="#" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. HERO ===== -->
+<header class="hero" id="main">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <span class="hero__label">Keeping Families Connected</span>
+      <h1 class="hero__title">
+        Send photos, letters, cards, and more to your loved one in
+        <span class="hero__cycling" aria-live="polite">
+          <span class="hero__cycling-word" id="cyclingWord">prison</span>
+        </span>
+      </h1>
+      <p class="hero__subtitle">Delivered to any facility in the United States. Trusted by 500,000+ families.</p>
+      <div class="hero__ctas">
+        <a href="#" class="btn btn--primary btn--large">Send Now</a>
+        <a href="#" class="btn btn--ghost-white btn--large">Download the App</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="./assets/hero-phone.png" alt="Pelipost mobile app showing a photo-sharing interface for sending pictures to loved ones" width="480" height="640">
+    </div>
+  </div>
+</header>
+
+<!-- ===== 3. TRUST BAR ===== -->
+<section class="trust-bar" aria-label="Key statistics">
+  <div class="container trust-bar__inner">
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">20M+</span>
+      <span class="trust-bar__label">Photos Delivered</span>
+    </div>
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">4,000+</span>
+      <span class="trust-bar__label">Facilities Served</span>
+    </div>
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">500K+</span>
+      <span class="trust-bar__label">Families Connected</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. PRODUCT CATEGORIES ===== -->
+<section class="section" aria-labelledby="products-heading">
+  <div class="container">
+    <div class="section__header reveal">
+      <h2 class="section__title" id="products-heading">Everything you need to stay connected</h2>
+    </div>
+    <div class="products__grid reveal-stagger">
+      <!-- Send -->
+      <div class="product-card">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="10" width="40" height="28" rx="3"/>
+            <path d="M4 14l20 13 20-13"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Send</h3>
+        <p class="product-card__items">Photos, Postcards, Letters, Greeting Cards &amp; More</p>
+        <p class="product-card__desc">Upload photos from your phone or choose from our card selection. Personalize with messages and send directly to any correctional facility.</p>
+        <a href="#" class="product-card__link">
+          Explore
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <!-- Subscribe -->
+      <div class="product-card">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8h36v32H6z"/>
+            <path d="M6 8l18 16L42 8"/>
+            <path d="M14 22h20M14 28h14"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Subscribe</h3>
+        <p class="product-card__items">Connection Books, PeliPALS, Photo Calendars</p>
+        <p class="product-card__desc">Keep the connection consistent with subscription services. Automated monthly deliveries of curated photo books and more to your loved one.</p>
+        <a href="#" class="product-card__link">
+          Learn More
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <!-- Save -->
+      <div class="product-card">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="18"/>
+            <path d="M24 14v10l7 7"/>
+            <path d="M16 6l-4-2M32 6l4-2"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Save</h3>
+        <p class="product-card__items">PeliPOINTS Rewards &amp; Delivery Assurance</p>
+        <p class="product-card__desc">Earn rewards with every order through PeliPOINTS. Plus, Delivery Assurance guarantees your mail reaches your loved one or you get a full refund.</p>
+        <a href="#" class="product-card__link">
+          Learn More
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. HOW IT WORKS ===== -->
+<section class="section how-it-works" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section__header reveal">
+      <h2 class="section__title" id="how-heading">How Pelipost Works</h2>
+    </div>
+    <div class="steps reveal-stagger">
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="6" width="32" height="36" rx="3"/>
+            <path d="M16 18h16M16 24h10"/>
+            <circle cx="34" cy="34" r="8" fill="#ffa400" stroke="none"/>
+            <path d="M31 34h6M34 31v6" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="step__title">Choose &amp; Personalize</h3>
+        <p class="step__desc">Pick from photos, letters, postcards, greeting cards, and more. Upload from your phone or customize online.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="14" width="40" height="24" rx="3"/>
+            <path d="M12 22h8M12 28h6"/>
+            <path d="M28 22h8v8h-8z"/>
+            <path d="M4 14l8-8h24l8 8"/>
+          </svg>
+        </div>
+        <h3 class="step__title">We Print &amp; Ship</h3>
+        <p class="step__desc">Every order is professionally printed in-house and shipped directly to any correctional facility via USPS.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 4l6 12h14l-11 8 4 14-13-9-13 9 4-14L4 16h14z" fill="none"/>
+            <circle cx="24" cy="24" r="6" fill="#ffa400" stroke="none"/>
+            <path d="M21 24l2 2 4-4" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="step__title">Delivered to Your Loved One</h3>
+        <p class="step__desc">Your order arrives within 5–7 business days — faster than leading competitors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. TESTIMONIALS ===== -->
+<section class="section" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section__header reveal">
+      <h2 class="section__title" id="testimonials-heading">What families are saying</h2>
+    </div>
+    <div class="testimonials__grid reveal-stagger">
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="testimonial-card__quote">"This app is amazing. All you do is pick out the pictures you want to send to your loved one, and Pelipost does the rest."</p>
+        <p class="testimonial-card__author">— Maria T.</p>
+        <span class="testimonial-card__product">Photo Prints</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="testimonial-card__quote">"Bigger and better than competitors! Great app. I would recommend it to anyone trying to stay connected with their loved ones."</p>
+        <p class="testimonial-card__author">— James R.</p>
+        <span class="testimonial-card__product">Connection Books</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="testimonial-card__quote">"The fastest and most reliable service out there. My husband gets his photos within days, not weeks."</p>
+        <p class="testimonial-card__author">— Sarah K.</p>
+        <span class="testimonial-card__product">PeliPALS Member</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. MISSION & COMMUNITY ===== -->
+<section class="section" style="background: var(--color-bg-off);" aria-labelledby="mission-heading">
+  <div class="container mission__inner">
+    <div class="mission__content reveal">
+      <h2 id="mission-heading">We understand what you're going through</h2>
+      <p>Pelipost was founded by Joe Calderon and his mother, Becky Calderon, who experienced the challenges of incarceration firsthand. What started as a personal mission to stay connected has grown into a platform trusted by over half a million families across the country.</p>
+      <p>We believe that maintaining family bonds shouldn't be difficult, expensive, or unreliable. That's why we've built the most comprehensive communication platform for families with incarcerated loved ones.</p>
+      <div class="mission__stats">
+        <div>
+          <div class="mission__stat-number">20M+</div>
+          <div class="mission__stat-label">Photos Delivered</div>
+        </div>
+        <div>
+          <div class="mission__stat-number">4,000+</div>
+          <div class="mission__stat-label">Facilities Served</div>
+        </div>
+        <div>
+          <div class="mission__stat-number">500K+</div>
+          <div class="mission__stat-label">Families Connected</div>
+        </div>
+      </div>
+      <a href="#" class="btn btn--ghost-dark">Read Our Story</a>
+    </div>
+    <div class="mission__image reveal">
+      <img src="./assets/community.png" alt="Illustration of diverse families staying connected through letters, photos, and shared memories" width="800" height="600" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. FOR FACILITIES ===== -->
+<section class="section facility" aria-labelledby="facility-heading">
+  <div class="container facility__inner">
+    <div class="facility__content reveal">
+      <h2 id="facility-heading">Are you a correctional facility?</h2>
+      <p>Pelipost streamlines inmate mail with AI-powered content moderation, delivery tracking, and full compliance with facility regulations.</p>
+      <ul class="facility__features" role="list">
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          AI-powered content screening
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Real-time delivery tracking
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Full regulatory compliance
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Dedicated PelipostPRO dashboard
+        </li>
+      </ul>
+      <a href="#" class="btn btn--primary btn--large">Request a Demo</a>
+    </div>
+    <div class="facility__image reveal">
+      <img src="./assets/facility.png" alt="Illustration of Pelipost's secure mail processing and verification system" width="800" height="450" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. APP DOWNLOAD CTA ===== -->
+<section class="app-cta" aria-labelledby="app-heading">
+  <div class="container">
+    <h2 id="app-heading">Download Pelipost</h2>
+    <p>The easiest way to stay connected with your incarcerated loved one.</p>
+    <div class="app-cta__badges">
+      <a href="#" class="app-badge" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg>
+        <div class="app-badge__text">
+          <small>Download on the</small>
+          <span>App Store</span>
+        </div>
+      </a>
+      <a href="#" class="app-badge" aria-label="Get it on Google Play" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.56.69.56 1.19s-.22.92-.56 1.19l-2.29 1.32-2.5-2.5 2.5-2.5 2.29 1.3M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+        <div class="app-badge__text">
+          <small>Get it on</small>
+          <span>Google Play</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <a href="#" class="footer__logo" aria-label="Pelipost home">
+          <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="20" r="14" fill="#ffa400"/>
+            <ellipse cx="24" cy="22" rx="10" ry="8" fill="#fff" opacity="0.3"/>
+            <path d="M18 20c0 0-2 10 6 16c8-6 6-16 6-16" fill="#ffa400"/>
+            <path d="M20 18c-1-4 0-8 4-10c4 2 5 6 4 10" fill="#e69200"/>
+            <circle cx="20" cy="17" r="1.5" fill="#fff"/>
+            <path d="M24 24l-6 6h12l-6-6z" fill="#fff" opacity="0.85"/>
+            <path d="M18 30l6-6 6 6" stroke="#e69200" stroke-width="1.2" fill="none"/>
+            <path d="M34 16c2-1 5 0 6 2c-1 2-4 2-6 1" fill="#e69200"/>
+          </svg>
+          <span class="footer__logo-text">Pelipost</span>
+        </a>
+        <div class="footer__tagline">Keeping Families Connected</div>
+        <p>Helping families stay connected with incarcerated loved ones through photos, letters, and more.</p>
+      </div>
+
+      <!-- Products -->
+      <div class="footer__col">
+        <h4>Products</h4>
+        <ul role="list">
+          <li><a href="#">Photo Prints</a></li>
+          <li><a href="#">Postcards</a></li>
+          <li><a href="#">Letters</a></li>
+          <li><a href="#">Greeting Cards</a></li>
+          <li><a href="#">Connection Books</a></li>
+          <li><a href="#">PeliPALS</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- For Facilities -->
+      <div class="footer__col">
+        <h4>For Facilities</h4>
+        <ul role="list">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">PelipostPRO</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Request Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul role="list">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Facility Lookup</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        &copy; 2025 Pelipost, Inc. All rights reserved.
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__legacy">
+      Formerly known as The Photos-to-Prison App®
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
