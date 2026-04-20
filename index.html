@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelipost — Keeping Families Connected | Send Photos, Letters & More to Incarcerated Loved Ones</title>
+  <title>Pelipost — Mail and Connection, Simplified | Send Photos, Letters & More to Incarcerated Loved Ones</title>
   <meta name="description" content="Pelipost helps families stay connected with incarcerated loved ones. Send photos, letters, postcards, greeting cards and more to any correctional facility in the United States.">
-  <meta property="og:title" content="Pelipost — Keeping Families Connected">
+  <meta property="og:title" content="Pelipost — Mail and Connection, Simplified">
   <meta property="og:description" content="Send photos, letters, postcards, greeting cards and more to your incarcerated loved one. Delivered to any facility in the US.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
@@ -24,4 +24,112 @@
 <!-- Skip Link -->
 <a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
 
-  ...
+<!-- ===== 1. NAVIGATION ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <!-- Logo — Real Pelipost logo -->
+    <a href="#" class="nav__logo" aria-label="Pelipost home">
+      <img src="./assets/logo-black.webp" alt="Pelipost" class="nav__logo-img" width="140" height="36">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="#community-heading">Community</a></li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./facilities.html#demo">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <a href="#" class="btn btn--ghost-dark btn--small nav__btn-desktop">Log In</a>
+      <a href="#" class="btn btn--primary btn--small nav__btn-desktop">Get Started</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="#community-heading">Community</a></li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./facilities.html#demo">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a href="#" class="btn btn--ghost-dark">Log In</a>
+      <a href="#" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. HERO ===== -->
+<header class="hero" id="main">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <span class="hero__label">Mail and Connection, Simplified</span>
+      <h1 class="hero__title">
+        Stay close to your loved one in
+        <span class="hero__cycling" aria-live="polite">
+          <span class="hero__cycling-word" id="cyclingWord">prison</span>
+        </span>
+      </h1>
+      <p class="hero__subtitle">Photos, letters, postcards, greeting cards, and more — printed and delivered to any correctional facility in the United States.</p>
+      <div class="hero__ctas">
+        <a href="#" class="btn btn--primary btn--large">Send Now</a>
+        <a href="#" class="btn btn--ghost-white btn--large">Download the App</a>
+      </div>
+      <div class="hero__trust">
+        <span class="hero__trust-item">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Trusted by 500K+ families
+        </span>
+        <span class="hero__trust-item">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          4,000+ facilities served
+        </span>
+        <span class="hero__trust-item">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          5–7 day delivery
+        </span>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="./assets/hero-phone.png" alt="Pelipost mobile app showing a photo-sharing interface for sending pictures to loved ones" width="480" height="640">
+    </div>
+  </div>
+</header>
+
+<!-- ===== 3. TRUST BAR ===== -->
+<section class="trust-bar" aria-label="Key statistics and partnerships">
+  <div class="container trust-bar__inner">
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">20M+</span>
+      <span class="trust-bar__label">Photos & Letters Delivered</span>
+    </div>
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">4,000+</span>
+      <span class="trust-bar__label">Facilities Nationwide</span>
+    </div>
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">500K+</span>
+      <span class="trust-bar__label">Families Connected</span>
+    </div>
+    <div class="trust-bar__stat reveal">
+      <span class="trust-bar__number">4.8★</span>
+      <span class="trust-bar__label">App Store Rating</span>
+    </div>
+  </div>
+</section>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
