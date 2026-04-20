@@ -114,36 +114,51 @@
     }
 
     .contact-card {
-      background: #fff;
+      background: linear-gradient(165deg, var(--color-brand-teal) 0%, #0f4560 55%, var(--color-navy) 100%);
       border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      padding: var(--space-10);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .contact-card {
+        padding: var(--space-12) var(--space-10);
+      }
     }
 
     .contact-card__title {
       font-size: var(--text-lg);
       font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: var(--space-3);
+      color: #fff;
+      margin-bottom: var(--space-4);
     }
 
     .contact-card__body {
       font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
       margin: 0;
     }
 
     .contact-card__body a {
-      color: var(--color-brand-teal);
+      color: var(--color-peach);
       font-weight: 600;
       text-decoration: underline;
-      text-underline-offset: 2px;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
     }
 
     .contact-card__body a:hover {
       color: var(--color-orange);
+      text-decoration-thickness: 2px;
+    }
+
+    .contact-card__body a:focus-visible {
+      outline: 2px solid var(--color-orange);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
   </style>
 </head>
