@@ -614,12 +614,13 @@
     }
 
     .partners-row__logo {
-      height: 40px;
+      height: 72px;
       width: auto;
+      max-width: 240px;
       object-fit: contain;
-      opacity: 0.8;
-      filter: grayscale(20%);
-      transition: opacity var(--transition-speed) ease, filter var(--transition-speed) ease;
+      opacity: 0.9;
+      filter: grayscale(15%);
+      transition: opacity var(--transition-speed) ease, filter var(--transition-speed) ease, transform var(--transition-speed) ease;
     }
 
     .partners-row__logo:hover {
@@ -627,8 +628,29 @@
       filter: none;
     }
 
+    .partners-row__logo-link {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .partners-row__logo-link:hover .partners-row__logo,
+    .partners-row__logo-link:focus-visible .partners-row__logo {
+      opacity: 1;
+      filter: none;
+    }
+
     .partners-row__logo--wire-of-hope {
-      height: 64px;
+      height: 80px;
+    }
+
+    @media (max-width: 600px) {
+      .partners-row__logo {
+        height: 56px;
+      }
+      .partners-row__logo--wire-of-hope {
+        height: 64px;
+      }
     }
 
     .community-initiatives__cta {
@@ -1094,9 +1116,9 @@
         <div class="partners-row">
           <span class="partners-row__label">Partners</span>
           <div class="partners-row__logos">
-            <img src="./assets/prison-fellowship-logo.png" alt="Prison Fellowship" class="partners-row__logo" height="40" loading="lazy" decoding="async">
-            <img src="./assets/sea-logo.svg" alt="Social Enterprise Alliance" class="partners-row__logo" height="40" loading="lazy" decoding="async">
-            <a href="https://wireofhope.com/" target="_blank" rel="noopener noreferrer"><img src="./assets/wire-of-hope-partnership-logo.jpg" alt="Wire of Hope partnership logo" class="partners-row__logo partners-row__logo--wire-of-hope" height="64" loading="lazy" decoding="async"></a>
+            <a href="https://www.prisonfellowship.org/" target="_blank" rel="noopener noreferrer" class="partners-row__logo-link" aria-label="Prison Fellowship (opens in a new tab)"><img src="./assets/prison-fellowship-logo.png" alt="Prison Fellowship" class="partners-row__logo" height="72" loading="lazy" decoding="async"></a>
+            <a href="https://socialenterprise.us/" target="_blank" rel="noopener noreferrer" class="partners-row__logo-link" aria-label="Social Enterprise Alliance (opens in a new tab)"><img src="./assets/sea-logo.svg" alt="Social Enterprise Alliance" class="partners-row__logo" height="72" loading="lazy" decoding="async"></a>
+            <a href="https://wireofhope.com/" target="_blank" rel="noopener noreferrer" class="partners-row__logo-link" aria-label="Wire of Hope (opens in a new tab)"><img src="./assets/wire-of-hope-partnership-logo.jpg" alt="Wire of Hope partnership logo" class="partners-row__logo partners-row__logo--wire-of-hope" height="80" loading="lazy" decoding="async"></a>
           </div>
         </div>
       </div>
