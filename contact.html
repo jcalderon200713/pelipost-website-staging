@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Pelipost, We're Here When You Need Us</title>
+  <meta name="description" content="Questions about your order, your account, or sending mail to a loved one? Our Customer Support Team is here to help. Many of us have lived it too.">
+  <meta property="og:title" content="Contact Us | Pelipost">
+  <meta property="og:description" content="We read every message and answer every question. Reach Pelipost customer support, facilities inquiries, and partnerships.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* =============================================
+       CONTACT PAGE, PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    .contact-page {
+      padding-top: 72px;
+      background: var(--color-bg);
+    }
+
+    .contact-hero {
+      padding-block: var(--space-16) var(--space-12);
+    }
+
+    @media (min-width: 768px) {
+      .contact-hero {
+        padding-block: var(--space-20) var(--space-16);
+      }
+    }
+
+    .contact-hero__inner {
+      max-width: 720px;
+      margin-inline: auto;
+      text-align: center;
+      padding-inline: var(--space-6);
+    }
+
+    .contact-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: var(--space-6);
+    }
+
+    .contact-hero__lead {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-5);
+    }
+
+    .contact-hero__lead--emphasis {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .contact-hero__cta-wrap {
+      margin-top: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .contact-hero__cta-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .contact-divider {
+      max-width: 960px;
+      margin: 0 auto;
+      padding-inline: var(--space-6);
+    }
+
+    .contact-divider__line {
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      margin: 0;
+    }
+
+    .contact-secondary {
+      padding-block: var(--space-12) var(--space-20);
+    }
+
+    .contact-secondary__grid {
+      max-width: 960px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .contact-secondary__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-10);
+      }
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-card__title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .contact-card__body {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact-card__body a {
+      color: var(--color-brand-teal);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .contact-card__body a:hover {
+      color: var(--color-orange);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
+
+<!-- ===== 1. NAVIGATION ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <!-- Logo -->
+    <a href="./index.html" class="nav__logo" aria-label="Pelipost home">
+      <img src="./assets/logo-black.webp" alt="Pelipost" class="nav__logo-img" width="140" height="36">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./index.html#community-heading">Community</a></li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./contact.html" aria-current="page">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <a href="#" class="btn btn--ghost-dark btn--small nav__btn-desktop">Log In</a>
+      <a href="#" class="btn btn--primary btn--small nav__btn-desktop">Get Started</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./index.html#community-heading">Community</a></li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a href="#" class="btn btn--ghost-dark">Log In</a>
+      <a href="#" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. MAIN ===== -->
+<main class="contact-page" id="main">
+
+  <!-- Primary contact section -->
+  <section class="contact-hero">
+    <div class="contact-hero__inner">
+      <h1 class="contact-hero__title">We're here when you need us</h1>
+      <p class="contact-hero__lead">Sending mail to someone incarcerated comes with a lot of emotions. Maybe you have questions. Maybe something didn't go the way you expected. Maybe you're sending your first order and just want to make sure you're doing it right. Whatever brought you here, you're in the right place. Our Customer Support Team gets it, because many of us have lived it too.</p>
+      <p class="contact-hero__lead contact-hero__lead--emphasis">We read every message, answer every question, and we'll do whatever we can to help you stay connected to the person you love.</p>
+
+      <div class="contact-hero__cta-wrap">
+        <a href="https://linktr.ee/pelipost_support" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">Get Support</a>
+        <p class="contact-hero__cta-note">Our support team is ready to help with orders, facility questions, account issues, and anything else you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="contact-divider">
+    <hr class="contact-divider__line" aria-hidden="true">
+  </div>
+
+  <!-- Secondary sections -->
+  <section class="contact-secondary" aria-label="Other ways to reach Pelipost">
+    <div class="contact-secondary__grid">
+      <article class="contact-card">
+        <h2 class="contact-card__title">For correctional facilities</h2>
+        <p class="contact-card__body">Interested in partnering with Pelipost or learning about PelipostPRO? Visit our <a href="./facilities.html">Facilities page</a> for more information and to request a demo.</p>
+      </article>
+
+      <article class="contact-card">
+        <h2 class="contact-card__title">Partnerships, press, and everything else</h2>
+        <p class="contact-card__body">Looking for partnership info, need a media kit, have an idea, or working on a story? Email <a href="mailto:marketing@pelipost.com">marketing@pelipost.com</a> and we'll get back to you.</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 3. FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Pelipost home">
+          <img src="./assets/logo-white.webp" alt="Pelipost" class="footer__logo-img" width="140" height="36">
+        </a>
+        <div class="footer__tagline">Mail and Connection, Simplified</div>
+        <p>Helping families stay connected with incarcerated loved ones through photos, letters, and more.</p>
+      </div>
+
+      <!-- Products -->
+      <div class="footer__col">
+        <h4>Products</h4>
+        <ul role="list">
+          <li><a href="./products.html">Photo Prints</a></li>
+          <li><a href="./products.html">Postcards</a></li>
+          <li><a href="./products.html">Letters</a></li>
+          <li><a href="./products.html">Greeting Cards</a></li>
+          <li><a href="./products.html">Connection Books</a></li>
+          <li><a href="./products.html">PeliPALS</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="./story.html">Our Story</a></li>
+          <li><a href="./index.html#community-heading">Community</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- For Facilities -->
+      <div class="footer__col">
+        <h4>For Facilities</h4>
+        <ul role="list">
+          <li><a href="./facilities.html">Overview</a></li>
+          <li><a href="./facilities.html">PelipostPRO</a></li>
+          <li><a href="./facilities.html">Case Studies</a></li>
+          <li><a href="./facilities.html">Request Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul role="list">
+          <li><a href="https://linktr.ee/pelipost_support" target="_blank" rel="noopener noreferrer">Help Center</a></li>
+          <li><a href="https://linktr.ee/pelipost_support" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="#">Facility Lookup</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        &copy; 2025 Pelipost, Inc. All rights reserved.
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
