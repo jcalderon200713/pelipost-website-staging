@@ -216,6 +216,129 @@
   gap: var(--space-3);
 }
 
+/* ===== NAV SUBMENU (Community dropdown) ===== */
+.nav__item--has-submenu {
+  position: relative;
+}
+
+.nav__submenu-parent {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav__chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 200ms var(--ease-out);
+}
+
+.nav__item--has-submenu:hover .nav__chevron,
+.nav__item--has-submenu:focus-within .nav__chevron {
+  transform: rotate(180deg);
+}
+
+.nav__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  padding: var(--space-2);
+  margin-top: 8px;
+  list-style: none;
+  display: none;
+  z-index: 100;
+}
+
+.nav__item--has-submenu:hover .nav__submenu,
+.nav__item--has-submenu:focus-within .nav__submenu {
+  display: block;
+}
+
+.nav__submenu li {
+  list-style: none;
+}
+
+.nav__submenu a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav__submenu a:hover,
+.nav__submenu a:focus {
+  background: #f5f7fa;
+  color: var(--color-brand-teal);
+}
+
+/* Mobile submenu */
+.mobile-menu__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu__row .mobile-menu__parent-link {
+  flex: 1;
+  border-bottom: 0;
+}
+
+.mobile-menu__submenu-toggle {
+  background: none;
+  border: 0;
+  padding: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.mobile-menu__chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform 200ms var(--ease-out);
+}
+
+.mobile-menu__submenu-toggle[aria-expanded="true"] .mobile-menu__chevron {
+  transform: rotate(180deg);
+}
+
+.mobile-menu__submenu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  padding-left: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.mobile-menu__submenu--open {
+  display: flex;
+}
+
+.mobile-menu__submenu li {
+  list-style: none;
+}
+
+.mobile-menu__submenu a {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  display: block;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;

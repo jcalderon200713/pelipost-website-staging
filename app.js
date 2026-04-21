@@ -50,6 +50,20 @@
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
       });
     });
+
+    // Mobile submenu expand/collapse
+    mobileMenu.querySelectorAll('.mobile-menu__submenu-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var item = btn.closest('.mobile-menu__item--has-submenu');
+        if (!item) return;
+        var submenu = item.querySelector('.mobile-menu__submenu');
+        if (!submenu) return;
+        var isOpen = submenu.classList.toggle('mobile-menu__submenu--open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
   }
 
   // ===== HERO CYCLING TEXT =====
