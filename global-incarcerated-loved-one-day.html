@@ -22,10 +22,18 @@
   <style>
     /* =============================================
        GLOBAL INCARCERATED LOVED ONE DAY - PAGE STYLES
+       Page palette: Aqua Green #41c7a9, White #ffffff, Dark Blue #0d5270
        ============================================= */
+    .gilo-page {
+      --gilo-aqua: #41c7a9;
+      --gilo-aqua-soft: #e6f7f2;
+      --gilo-dark-blue: #0d5270;
+      --gilo-dark-blue-hover: #0a4159;
+      --gilo-surface-tint: #f1f9f7;
+    }
     .gilo-hero {
       padding-top: 72px;
-      background: var(--color-peach);
+      background: var(--gilo-surface-tint);
       position: relative;
       overflow: hidden;
       text-align: center;
@@ -39,7 +47,7 @@
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: rgba(255, 164, 0, 0.07);
+      background: rgba(65, 199, 169, 0.10);
       pointer-events: none;
     }
     .gilo-hero__inner {
@@ -57,14 +65,14 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-brand-teal);
+      color: var(--gilo-dark-blue);
       margin-bottom: var(--space-3);
     }
     .gilo-hero__date {
       display: block;
       font-family: var(--font-accent);
       font-size: var(--text-xl);
-      color: var(--color-brand-orange);
+      color: var(--gilo-aqua);
       margin-bottom: var(--space-4);
     }
     .gilo-hero__title {
@@ -114,7 +122,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-brand-teal);
+      color: var(--gilo-dark-blue);
       margin-bottom: var(--space-3);
       display: block;
     }
@@ -153,7 +161,7 @@
     /* Language section */
     .gilo-language {
       padding-block: var(--space-16);
-      background: var(--color-peach);
+      background: var(--gilo-aqua-soft);
     }
     .gilo-language__inner {
       max-width: 880px;
@@ -184,10 +192,10 @@
       padding: 10px 18px;
       border-radius: 999px;
       background: #fff;
-      color: var(--color-brand-teal);
+      color: var(--gilo-dark-blue);
       font-weight: 600;
       font-size: var(--text-sm);
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid rgba(13, 82, 112, 0.12);
     }
 
     /* Ways to participate */
@@ -205,7 +213,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-brand-teal);
+      color: var(--gilo-dark-blue);
       margin-bottom: var(--space-3);
       display: block;
     }
@@ -242,8 +250,8 @@
       width: 44px;
       height: 44px;
       border-radius: 12px;
-      background: rgba(255, 164, 0, 0.12);
-      color: var(--color-brand-orange);
+      background: rgba(65, 199, 169, 0.15);
+      color: var(--gilo-dark-blue);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -267,10 +275,10 @@
       .gilo-ways__grid { grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* Community photo grid */
+    /* Community photo grid: 1 col mobile, 2x2 tablet, 4 in a row desktop */
     .gilo-gallery {
       padding-block: var(--space-16);
-      background: var(--color-peach);
+      background: var(--gilo-surface-tint);
     }
     .gilo-gallery__header {
       text-align: center;
@@ -280,6 +288,7 @@
     .gilo-gallery__title {
       font-size: var(--text-xl);
       font-weight: 700;
+      color: var(--gilo-dark-blue);
       margin-bottom: var(--space-3);
       line-height: 1.2;
     }
@@ -290,28 +299,47 @@
     }
     .gilo-gallery__grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-      max-width: 1080px;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 1200px;
       margin-inline: auto;
     }
     .gilo-gallery__item {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 4px 14px rgba(13, 82, 112, 0.08);
+      border: 1px solid rgba(13, 82, 112, 0.06);
+    }
+    .gilo-gallery__media {
       aspect-ratio: 1 / 1;
       background: #f4f4f4;
+      overflow: hidden;
     }
-    .gilo-gallery__item img {
+    .gilo-gallery__media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    @media (min-width: 720px) {
-      .gilo-gallery__grid { grid-template-columns: repeat(3, 1fr); }
+    .gilo-gallery__caption {
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      line-height: 1.55;
+      color: var(--gilo-dark-blue);
+      background: #fff;
+      border-top: 3px solid var(--gilo-aqua);
     }
-    @media (min-width: 1000px) {
-      .gilo-gallery__grid { grid-template-columns: repeat(5, 1fr); }
+    @media (min-width: 640px) {
+      .gilo-gallery__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .gilo-gallery__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+      }
     }
 
     /* Blog callout / closing */
@@ -323,13 +351,14 @@
       max-width: 780px;
       margin-inline: auto;
       text-align: center;
-      background: var(--color-peach);
+      background: var(--gilo-aqua-soft);
       padding: var(--space-10) var(--space-6);
       border-radius: 20px;
     }
     .gilo-blog-callout__title {
       font-size: var(--text-xl);
       font-weight: 700;
+      color: var(--gilo-dark-blue);
       margin-bottom: var(--space-3);
       line-height: 1.2;
     }
@@ -338,12 +367,34 @@
       line-height: 1.6;
       margin-bottom: var(--space-6);
     }
+
+    /* Page-scoped button overrides: primary = Dark Blue + white, secondary = Aqua */
+    .gilo-page .btn--primary {
+      background: var(--gilo-dark-blue);
+      color: #fff;
+    }
+    .gilo-page .btn--primary:hover {
+      background: var(--gilo-dark-blue-hover);
+    }
+    .gilo-page .btn--ghost-dark {
+      background: transparent;
+      color: var(--gilo-dark-blue);
+      border: 1px solid var(--gilo-dark-blue);
+    }
+    .gilo-page .btn--ghost-dark:hover {
+      background: var(--gilo-dark-blue);
+      color: #fff;
+    }
+    .gilo-page a.gilo-link-secondary {
+      color: var(--gilo-aqua);
+      font-weight: 600;
+    }
   </style>
 </head>
-<body>
+<body class="gilo-page">
 
 <!-- Skip Link -->
-<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
+<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#0d5270;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
 
 <!-- ===== 1. NAVIGATION ===== -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -510,15 +561,34 @@
 <section class="gilo-gallery" aria-labelledby="gallery-heading">
   <div class="container">
     <div class="gilo-gallery__header">
-      <h2 class="gilo-gallery__title" id="gallery-heading">A snapshot of our community</h2>
-      <p class="gilo-gallery__subhead">Families, friends, and supporters honoring their loved ones through art, photos, and shared moments.</p>
+      <h2 class="gilo-gallery__title" id="gallery-heading">The movement in motion</h2>
+      <p class="gilo-gallery__subhead">Every August 8th, families, friends, and supporters come together to honor their incarcerated loved ones. Here's what that looks like.</p>
     </div>
     <div class="gilo-gallery__grid">
-      <div class="gilo-gallery__item"><img src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/666885cd45de19c118c190ea_IMG_9843%20Large.jpeg" alt="Community artwork honoring Global Incarcerated Loved One Day" loading="lazy"></div>
-      <div class="gilo-gallery__item"><img src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/666885de45de19c118c19e0e_IMG_9842%20Large.jpeg" alt="Handmade tribute created by a Pelipost community member" loading="lazy"></div>
-      <div class="gilo-gallery__item"><img src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/666885e88a3b225f9bcf3b80_IMG_9848%20Large.jpeg" alt="Family-created art celebrating a loved one" loading="lazy"></div>
-      <div class="gilo-gallery__item"><img src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/666885f0a349a9eeb992ee24_IMG_9844%20Large.jpeg" alt="Personal tribute to an incarcerated loved one" loading="lazy"></div>
-      <div class="gilo-gallery__item"><img src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/666885fc5dce9043e16c19d3_IMG_9845%20Large.jpeg" alt="Community artwork shared during Global Incarcerated Loved One Day" loading="lazy"></div>
+      <figure class="gilo-gallery__item">
+        <div class="gilo-gallery__media">
+          <img src="./assets/gilo-movement-1-shop-collection.jpg" alt="Shop the GILO Day collection of cards, apparel, and keepsakes designed to honor your loved one." loading="lazy">
+        </div>
+        <figcaption class="gilo-gallery__caption">Shop the GILO Day collection of cards, apparel, and keepsakes designed to honor your loved one.</figcaption>
+      </figure>
+      <figure class="gilo-gallery__item">
+        <div class="gilo-gallery__media">
+          <img src="./assets/gilo-movement-2-love-never-gives-up.jpg" alt="Love never gives up. A reminder for every family on the journey." loading="lazy">
+        </div>
+        <figcaption class="gilo-gallery__caption">Love never gives up. A reminder for every family on the journey.</figcaption>
+      </figure>
+      <figure class="gilo-gallery__item">
+        <div class="gilo-gallery__media">
+          <img src="./assets/gilo-movement-3-wear-the-message.jpg" alt="Wear the message. Start the conversation. Show your support wherever you go." loading="lazy">
+        </div>
+        <figcaption class="gilo-gallery__caption">Wear the message. Start the conversation. Show your support wherever you go.</figcaption>
+      </figure>
+      <figure class="gilo-gallery__item">
+        <div class="gilo-gallery__media">
+          <img src="./assets/gilo-movement-4-i-support-gilo.jpg" alt="&quot;I Support Global Incarcerated Loved One Day.&quot; Small signs of solidarity, sent all over the country." loading="lazy">
+        </div>
+        <figcaption class="gilo-gallery__caption">"I Support Global Incarcerated Loved One Day." Small signs of solidarity, sent all over the country.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
