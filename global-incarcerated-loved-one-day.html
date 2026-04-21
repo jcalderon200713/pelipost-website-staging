@@ -107,7 +107,7 @@
     /* Meaning / Mission section */
     .gilo-meaning {
       padding-block: var(--space-16);
-      background: #fff;
+      background: var(--gilo-aqua-soft);
     }
     .gilo-meaning__grid {
       display: grid;
@@ -201,7 +201,7 @@
     /* Ways to participate */
     .gilo-ways {
       padding-block: var(--space-16);
-      background: #fff;
+      background: var(--gilo-surface-tint);
     }
     .gilo-ways__header {
       text-align: center;
@@ -278,7 +278,7 @@
     /* Community photo grid: 1 col mobile, 2x2 tablet, 4 in a row desktop */
     .gilo-gallery {
       padding-block: var(--space-16);
-      background: var(--gilo-surface-tint);
+      background: #fff;
     }
     .gilo-gallery__header {
       text-align: center;
@@ -345,7 +345,7 @@
     /* Blog callout / closing */
     .gilo-blog-callout {
       padding-block: var(--space-16);
-      background: #fff;
+      background: var(--gilo-surface-tint);
     }
     .gilo-blog-callout__inner {
       max-width: 780px;
@@ -464,7 +464,14 @@
       text-align: center;
       color: var(--color-text-muted);
       font-size: var(--text-sm);
-      margin-top: var(--space-3);
+      margin: var(--space-3) auto 0;
+      max-width: 560px;
+    }
+    .gilo-video__stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     @media (max-width: 520px) {
       .gilo-video__frame-wrap {
@@ -587,11 +594,13 @@
     <div class="gilo-video__frame-wrap">
       <iframe src="https://www.youtube.com/embed/L2O3e_J0rkc" title="What GILO Day means to us" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
-    <p class="gilo-video__caption">Featuring Paige and Gigi of the Love Within Walls Podcast, plus voices from the Pelipost Family.</p>
-    <div class="gilo-video__cta-row">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUU7h6qjIUC7Aj_aitU5sTsTsBDpee7YokXOdmFlC-GHAWTA/viewform?usp=header" class="btn btn--large gilo-video__cta" target="_blank" rel="noopener noreferrer">Share your GILO Day story</a>
+    <div class="gilo-video__stack">
+      <p class="gilo-video__caption">Featuring Paige and Gigi of the Love Within Walls Podcast, plus voices from the Pelipost Family.</p>
+      <div class="gilo-video__cta-row">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUU7h6qjIUC7Aj_aitU5sTsTsBDpee7YokXOdmFlC-GHAWTA/viewform?usp=header" class="btn btn--large gilo-video__cta" target="_blank" rel="noopener noreferrer">Share your GILO Day story</a>
+      </div>
+      <p class="gilo-video__support">We'd love to feature your voice in future videos and posts.</p>
     </div>
-    <p class="gilo-video__support">We'd love to feature your voice in future videos and posts.</p>
   </div>
 </section>
 
@@ -604,7 +613,6 @@
         <h2 class="gilo-meaning__title" id="meaning-heading">A day dedicated to the people who love someone on the inside</h2>
         <p>If you've ever waited by the phone, saved every letter, counted the days until a visit, or planned your whole week around a single five-minute call, this day is for you.</p>
         <p>Nearly half of Americans have a family member or loved one who has been impacted by incarceration. Yet the experience is often surrounded by silence, judgment, and stigma.</p>
-        <p>Global Incarcerated Loved One Day is a yearly reminder that no one has to walk this road alone. It is a day to honor your loved one, celebrate the strength of the families behind them, and send a simple message: you are seen, you are valued, and you are not forgotten.</p>
         <p>At Pelipost, we built this day because we have lived it. Every August 8, the community comes together in photos, letters, and social posts that remind incarcerated loved ones and their families that love travels anywhere.</p>
       </div>
       <div class="gilo-meaning__image">
@@ -614,25 +622,18 @@
   </div>
 </section>
 
-<!-- ===== 4. PERSON-FIRST LANGUAGE ===== -->
-<section class="gilo-language" aria-labelledby="language-heading">
-  <div class="container gilo-language__inner">
-    <span class="gilo-meaning__eyebrow">Person-First Language</span>
-    <h2 class="gilo-language__title" id="language-heading">Words carry dignity</h2>
-    <p class="gilo-language__text">How we talk about people shapes how we treat them. Person-first language puts the human before the circumstance. It reminds us that our loved ones are parents, partners, siblings, children, and friends, first and always.</p>
-    <p class="gilo-language__text">On Global Incarcerated Loved One Day, we choose words that lead with dignity. We drop harmful labels. We lift up the people behind the headlines.</p>
-    <div class="gilo-language__pill-row">
-      <span class="gilo-language__pill">Incarcerated loved one</span>
-      <span class="gilo-language__pill">Person who is incarcerated</span>
-      <span class="gilo-language__pill">Loved one</span>
-      <span class="gilo-language__pill">Family member</span>
-      <span class="gilo-language__pill">Correctional facility</span>
-      <span class="gilo-language__pill">Returning citizen</span>
+<!-- ===== 5. PULLED QUOTE ===== -->
+<section class="gilo-quote" aria-label="Community quote">
+  <div class="container">
+    <div class="gilo-quote__inner">
+      <span class="gilo-quote__marks" aria-hidden="true">&ldquo;</span>
+      <p class="gilo-quote__text">This day says: we love you, we miss you, and we are still here. No matter the walls or distance between us.</p>
+      <p class="gilo-quote__attribution">Gigi, Co-host of Love Within Walls Podcast</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 5. WAYS TO PARTICIPATE ===== -->
+<!-- ===== 6. WAYS TO PARTICIPATE ===== -->
 <section class="gilo-ways" id="how-to-participate" aria-labelledby="participate-heading">
   <div class="container">
     <div class="gilo-ways__header">
@@ -695,7 +696,25 @@
   </div>
 </section>
 
-<!-- ===== 6. GALLERY ===== -->
+<!-- ===== 7. PERSON-FIRST LANGUAGE ===== -->
+<section class="gilo-language" aria-labelledby="language-heading">
+  <div class="container gilo-language__inner">
+    <span class="gilo-meaning__eyebrow">Person-First Language</span>
+    <h2 class="gilo-language__title" id="language-heading">Words carry dignity</h2>
+    <p class="gilo-language__text">How we talk about people shapes how we treat them. Person-first language puts the human before the circumstance. It reminds us that our loved ones are parents, partners, siblings, children, and friends, first and always.</p>
+    <p class="gilo-language__text">On Global Incarcerated Loved One Day, we choose words that lead with dignity. We drop harmful labels. We lift up the people behind the headlines.</p>
+    <div class="gilo-language__pill-row">
+      <span class="gilo-language__pill">Incarcerated loved one</span>
+      <span class="gilo-language__pill">Person who is incarcerated</span>
+      <span class="gilo-language__pill">Loved one</span>
+      <span class="gilo-language__pill">Family member</span>
+      <span class="gilo-language__pill">Correctional facility</span>
+      <span class="gilo-language__pill">Returning citizen</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. GALLERY ===== -->
 <section class="gilo-gallery" aria-labelledby="gallery-heading">
   <div class="container">
     <div class="gilo-gallery__header">
@@ -731,7 +750,7 @@
   </div>
 </section>
 
-<!-- ===== 7. BLOG CALLOUT ===== -->
+<!-- ===== 9. BLOG CALLOUT ===== -->
 <section class="gilo-blog-callout" aria-labelledby="blog-cta-heading">
   <div class="container">
     <div class="gilo-blog-callout__inner">
@@ -742,18 +761,7 @@
   </div>
 </section>
 
-<!-- ===== 8. PULLED QUOTE ===== -->
-<section class="gilo-quote" aria-label="Community quote">
-  <div class="container">
-    <div class="gilo-quote__inner">
-      <span class="gilo-quote__marks" aria-hidden="true">&ldquo;</span>
-      <p class="gilo-quote__text">This day says: we love you, we miss you, and we are still here. No matter the walls or distance between us.</p>
-      <p class="gilo-quote__attribution">Gigi, Co-host of Love Within Walls Podcast</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 9. APP DOWNLOAD CTA ===== -->
+<!-- ===== 10. APP DOWNLOAD CTA ===== -->
 <section class="app-cta" aria-labelledby="app-heading">
   <div class="container">
     <h2 id="app-heading">Love travels anywhere</h2>
@@ -769,7 +777,7 @@
   </div>
 </section>
 
-<!-- ===== 9. FOOTER ===== -->
+<!-- ===== 11. FOOTER ===== -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
