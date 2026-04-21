@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global Incarcerated Loved One Day | Pelipost</title>
-  <meta name="description" content="Every August 8, Global Incarcerated Loved One Day honors the families and loved ones impacted by incarceration. Learn what the day means and how to participate.">
+  <meta name="description" content="Every August 8th, Global Incarcerated Loved One Day honors the families and loved ones impacted by incarceration. Learn what the day means and how to participate.">
   <meta property="og:title" content="Global Incarcerated Loved One Day | Pelipost">
-  <meta property="og:description" content="Every August 8, we honor the loved ones and families impacted by incarceration with dignity, person-first language, and connection.">
+  <meta property="og:description" content="Every August 8th, we honor the loved ones and families impacted by incarceration with dignity, person-first language, and connection.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
 
@@ -479,6 +479,27 @@
       }
     }
 
+    /* App CTA override: align final CTA with GILO palette (dark blue + aqua) */
+    .gilo-page .app-cta {
+      background: linear-gradient(135deg, var(--gilo-dark-blue) 0%, #0a4159 100%);
+      color: #fff;
+    }
+    .gilo-page .app-cta h2 {
+      color: #fff;
+    }
+    .gilo-page .app-cta p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .gilo-page .app-cta::after {
+      content: '';
+      display: block;
+      width: 72px;
+      height: 3px;
+      background: var(--gilo-aqua);
+      border-radius: 2px;
+      margin: var(--space-6) auto 0;
+    }
+
     /* Pulled quote section */
     .gilo-quote {
       padding-block: var(--space-16);
@@ -572,9 +593,9 @@
 <header class="gilo-hero" id="main">
   <div class="container gilo-hero__inner">
     <span class="gilo-hero__eyebrow">A Day of Dignity and Connection</span>
-    <span class="gilo-hero__date">August 8</span>
+    <span class="gilo-hero__date">August 8th</span>
     <h1 class="gilo-hero__title">Global Incarcerated Loved One Day</h1>
-    <p class="gilo-hero__subtitle">Every August 8, we pause. We honor the loved ones on the inside and the families holding them close from the outside. One day. One community. A million quiet acts of love.</p>
+    <p class="gilo-hero__subtitle">Every August 8th, we pause. We honor the loved ones on the inside and the families holding them close from the outside. One day. One community. A million quiet acts of love.</p>
     <div class="gilo-hero__ctas">
       <a href="https://app.pelipost.com/" class="btn btn--primary btn--large">Send a Photo</a>
       <a href="#how-to-participate" class="btn btn--ghost-dark btn--large">How to Participate</a>
@@ -613,7 +634,7 @@
         <h2 class="gilo-meaning__title" id="meaning-heading">A day dedicated to the people who love someone on the inside</h2>
         <p>If you've ever waited by the phone, saved every letter, counted the days until a visit, or planned your whole week around a single five-minute call, this day is for you.</p>
         <p>Nearly half of Americans have a family member or loved one who has been impacted by incarceration. Yet the experience is often surrounded by silence, judgment, and stigma.</p>
-        <p>At Pelipost, we built this day because we have lived it. Every August 8, the community comes together in photos, letters, and social posts that remind incarcerated loved ones and their families that love travels anywhere.</p>
+        <p>At Pelipost, we built this day because we have lived it. Every August 8th, the community comes together in photos, letters, and social posts that remind incarcerated loved ones and their families that love travels anywhere.</p>
       </div>
       <div class="gilo-meaning__image">
         <img src="./assets/gilo-day-fan-art.jpg" alt="Fan-created artwork for Global Incarcerated Loved One Day" loading="lazy">
@@ -765,7 +786,7 @@
 <section class="app-cta" aria-labelledby="app-heading">
   <div class="container">
     <h2 id="app-heading">Love travels anywhere</h2>
-    <p>This August 8, and every day after, your loved one needs to know they're not forgotten. We'll help you say it.</p>
+    <p>This August 8th, and every day after, your loved one needs to know they're not forgotten. We'll help you say it.</p>
     <div class="app-cta__badges">
       <a href="https://apps.apple.com/us/app/pelipost-photos-to-prison/id1092410781" class="app-badge" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer">
         <img src="./assets/app-store.webp" alt="Download on the App Store" height="44">
