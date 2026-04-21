@@ -249,6 +249,27 @@
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <div class="elfsight-app-678da53d-a0e9-4f4b-8e59-3612cd866a95" data-elfsight-app-lazy></div>
   </div>
+  <script>
+    (function () {
+      var section = document.currentScript.closest('section.reviews');
+      if (!section) return;
+      var oldText = 'What our customers say';
+      var newText = 'Real families. Real reviews.';
+      function replaceIn(node) {
+        if (node.nodeType === 3) {
+          if (node.nodeValue && node.nodeValue.indexOf(oldText) !== -1) {
+            node.nodeValue = node.nodeValue.replace(oldText, newText);
+          }
+          return;
+        }
+        if (node.nodeType !== 1) return;
+        for (var i = 0; i < node.childNodes.length; i++) replaceIn(node.childNodes[i]);
+      }
+      var observer = new MutationObserver(function () { replaceIn(section); });
+      observer.observe(section, { childList: true, subtree: true, characterData: true });
+      replaceIn(section);
+    })();
+  </script>
 </section>
 
 <!-- ===== 8. MISSION & FOUNDERS ===== -->
