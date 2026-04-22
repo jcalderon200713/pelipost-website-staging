@@ -1531,8 +1531,14 @@
   max-width: 560px;
 }
 
+.blog-hero .blog-hero__title .heading-accent,
 .blog-hero .heading-accent {
-  color: #ffa400;
+  color: #ffa400 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffa400;
+  background: none;
+  mix-blend-mode: normal;
+  filter: none;
 }
 
 .blog-main {
