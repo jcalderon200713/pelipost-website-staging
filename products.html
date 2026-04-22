@@ -160,6 +160,35 @@
       height: 28px;
     }
 
+    /* Product photo media (Send section) */
+    .catalog-card__media {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: var(--space-4);
+      background: var(--color-light-teal);
+      border: 1px solid rgba(13, 82, 112, 0.08);
+      transition: border-color var(--transition-speed) ease;
+    }
+
+    .catalog-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-speed) ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .catalog-card:hover .catalog-card__media {
+        border-color: var(--color-orange);
+      }
+      .catalog-card:hover .catalog-card__media img {
+        transform: scale(1.04);
+      }
+    }
+
     .catalog-card__name {
       font-size: var(--text-base);
       font-weight: 700;
@@ -535,12 +564,8 @@
 
       <!-- Photo Prints -->
       <div class="catalog-card">
-        <div class="catalog-card__icon">
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="22" height="18" rx="2"/>
-            <circle cx="10" cy="12" r="2.5"/>
-            <path d="M3 19l5-5 4 4 4-5 6 6"/>
-          </svg>
+        <div class="catalog-card__media">
+          <img src="assets/product-photo-prints.jpg" alt="Photo Prints product preview" loading="lazy" decoding="async">
         </div>
         <h3 class="catalog-card__name">Photo Prints</h3>
         <div class="catalog-card__price">From $0.75</div>
@@ -549,14 +574,8 @@
 
       <!-- Postcards -->
       <div class="catalog-card">
-        <div class="catalog-card__icon">
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="24" height="14" rx="2"/>
-            <line x1="2" y1="13" x2="26" y2="13"/>
-            <line x1="14" y1="13" x2="14" y2="21"/>
-            <line x1="17" y1="16" x2="23" y2="16"/>
-            <line x1="17" y1="18.5" x2="21" y2="18.5"/>
-          </svg>
+        <div class="catalog-card__media">
+          <img src="assets/product-postcards.jpg" alt="Postcards product preview" loading="lazy" decoding="async">
         </div>
         <h3 class="catalog-card__name">Postcards</h3>
         <div class="catalog-card__price">From $2.49</div>
@@ -565,13 +584,8 @@
 
       <!-- Letters -->
       <div class="catalog-card">
-        <div class="catalog-card__icon">
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="4" width="20" height="24" rx="2"/>
-            <line x1="8" y1="10" x2="20" y2="10"/>
-            <line x1="8" y1="14" x2="20" y2="14"/>
-            <line x1="8" y1="18" x2="15" y2="18"/>
-          </svg>
+        <div class="catalog-card__media">
+          <img src="assets/product-letters.jpg" alt="Letters product preview" loading="lazy" decoding="async">
         </div>
         <h3 class="catalog-card__name">Letters</h3>
         <div class="catalog-card__price">From $2.99</div>
@@ -580,13 +594,8 @@
 
       <!-- Greeting Cards -->
       <div class="catalog-card">
-        <div class="catalog-card__icon">
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h20v20H4z" rx="2"/>
-            <line x1="14" y1="4" x2="14" y2="24"/>
-            <path d="M9 9l2.5 2.5L9 14"/>
-            <path d="M19 10h-3M19 13h-3"/>
-          </svg>
+        <div class="catalog-card__media">
+          <img src="assets/product-greeting-cards.jpg" alt="Greeting Cards product preview" loading="lazy" decoding="async">
         </div>
         <h3 class="catalog-card__name">Greeting Cards</h3>
         <div class="catalog-card__price">From $3.99</div>
@@ -595,14 +604,8 @@
 
       <!-- Activity Letters -->
       <div class="catalog-card">
-        <div class="catalog-card__icon">
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="3" width="20" height="22" rx="2"/>
-            <path d="M9 9l2 2-2 2M14 13h5"/>
-            <circle cx="10.5" cy="18" r="1"/>
-            <circle cx="14.5" cy="18" r="1"/>
-            <circle cx="18.5" cy="18" r="1"/>
-          </svg>
+        <div class="catalog-card__media">
+          <img src="assets/product-activity-letters.jpg" alt="Activity Letters product preview" loading="lazy" decoding="async">
         </div>
         <h3 class="catalog-card__name">Activity Letters</h3>
         <div class="catalog-card__price">From $2.99</div>
