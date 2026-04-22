@@ -1826,6 +1826,14 @@
   line-height: 1;
 }
 
-.heading-accent--orange {
-  color: #ffa400;
+.heading-accent.heading-accent--orange,
+h2 .heading-accent--orange,
+.mission__content h2 .heading-accent--orange,
+.community__content h2 .heading-accent--orange {
+  color: #ffa400 !important;
+  -webkit-text-fill-color: #ffa400;
+  opacity: 1;
+  background: none;
+  mix-blend-mode: normal;
+  filter: none;
 }
