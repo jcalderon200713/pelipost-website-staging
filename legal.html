@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy & Terms of Service | Pelipost</title>
+  <meta name="description" content="Learn about the Pelipost privacy policy and terms of service.">
+  <meta property="og:title" content="Privacy Policy & Terms of Service | Pelipost">
+  <meta property="og:description" content="Learn about the Pelipost privacy policy and terms of service.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* =============================================
+       LEGAL PAGE, PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    .legal-page {
+      padding-top: 72px;
+      background: var(--color-bg);
+    }
+
+    .legal-hero {
+      padding-block: var(--space-16) var(--space-10);
+    }
+
+    @media (min-width: 768px) {
+      .legal-hero {
+        padding-block: var(--space-20) var(--space-12);
+      }
+    }
+
+    .legal-hero__inner {
+      max-width: 820px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+      text-align: center;
+    }
+
+    .legal-hero__eyebrow {
+      display: inline-block;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-brand-teal);
+      margin-bottom: var(--space-4);
+    }
+
+    .legal-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: var(--space-5);
+    }
+
+    .legal-hero__lead {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin: 0 auto;
+      max-width: 640px;
+    }
+
+    .legal-content {
+      padding-block: var(--space-8) var(--space-20);
+    }
+
+    .legal-content__inner {
+      max-width: 820px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+      color: var(--color-text);
+    }
+
+    .legal-toc {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-10);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 768px) {
+      .legal-toc {
+        padding: var(--space-8);
+      }
+    }
+
+    .legal-toc__title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0 0 var(--space-4);
+    }
+
+    .legal-toc__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .legal-toc__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+      }
+    }
+
+    .legal-toc__heading {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-brand-teal);
+      margin: 0 0 var(--space-3);
+    }
+
+    .legal-toc__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .legal-toc__list li {
+      margin-bottom: var(--space-2);
+    }
+
+    .legal-toc__list a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
+    .legal-toc__list a:hover,
+    .legal-toc__list a:focus-visible {
+      color: var(--color-brand-teal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .legal-section {
+      margin-bottom: var(--space-12);
+    }
+
+    .legal-section__title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+    }
+
+    .legal-section__meta {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+      line-height: 1.6;
+    }
+
+    .legal-section__meta strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .legal-block {
+      margin-bottom: var(--space-8);
+    }
+
+    .legal-block h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0 0 var(--space-3);
+      line-height: 1.3;
+    }
+
+    .legal-block h4 {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-text);
+      margin: var(--space-5) 0 var(--space-2);
+      line-height: 1.4;
+    }
+
+    .legal-block p,
+    .legal-block ul {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.75;
+      margin: 0 0 var(--space-4);
+    }
+
+    .legal-block ul {
+      padding-left: var(--space-6);
+    }
+
+    .legal-block ul li {
+      margin-bottom: var(--space-2);
+    }
+
+    .legal-block a {
+      color: var(--color-brand-teal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      word-break: break-word;
+    }
+
+    .legal-block a:hover {
+      color: var(--color-orange);
+      text-decoration-thickness: 2px;
+    }
+
+    .legal-block a:focus-visible {
+      outline: 2px solid var(--color-orange);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .legal-divider {
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      margin: var(--space-12) 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
+
+<!-- ===== 1. NAVIGATION ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <!-- Logo -->
+    <a href="./index.html" class="nav__logo" aria-label="Pelipost home">
+      <img src="./assets/pelipost-logo-no-tagline-v2.jpg" alt="Pelipost" class="nav__logo-img" width="172" height="36">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li class="nav__item nav__item--has-submenu">
+        <a href="./index.html#community-heading" class="nav__submenu-parent" aria-haspopup="true" aria-expanded="false">Community
+          <svg class="nav__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 8 10 12 14 8"/></svg>
+        </a>
+        <ul class="nav__submenu" role="list">
+          <li><a href="./index.html#community-heading">Support Circles</a></li>
+          <li><a href="./global-incarcerated-loved-one-day.html">Global Incarcerated Loved One Day</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+        </ul>
+      </li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <a href="https://app.pelipost.com/login" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-dark btn--small nav__btn-desktop">Log In</a>
+      <a href="https://app.pelipost.com/home" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--small nav__btn-desktop">Get Started</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="./products.html">Products</a></li>
+      <li class="mobile-menu__item mobile-menu__item--has-submenu">
+        <div class="mobile-menu__row">
+          <a href="./index.html#community-heading" class="mobile-menu__parent-link">Community</a>
+          <button type="button" class="mobile-menu__submenu-toggle" aria-expanded="false" aria-label="Toggle Community submenu">
+            <svg class="mobile-menu__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 8 10 12 14 8"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-menu__submenu" role="list">
+          <li><a href="./index.html#community-heading">Support Circles</a></li>
+          <li><a href="./global-incarcerated-loved-one-day.html">Global Incarcerated Loved One Day</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+        </ul>
+      </li>
+      <li><a href="./facilities.html">For Facilities</a></li>
+      <li><a href="./story.html">Our Story</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a href="https://app.pelipost.com/login" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-dark">Log In</a>
+      <a href="https://app.pelipost.com/home" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. MAIN ===== -->
+<main class="legal-page" id="main">
+
+  <!-- Hero -->
+  <section class="legal-hero">
+    <div class="legal-hero__inner">
+      <span class="legal-hero__eyebrow">Pelipost Legal</span>
+      <h1 class="legal-hero__title">Privacy Policy &amp; Terms of Service</h1>
+      <p class="legal-hero__lead">Learn about the Pelipost privacy policy and terms of service.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="legal-content">
+    <div class="legal-content__inner">
+
+      <!-- Table of Contents -->
+      <nav class="legal-toc" aria-label="Legal table of contents">
+        <h2 class="legal-toc__title">Contents</h2>
+        <div class="legal-toc__grid">
+          <div>
+            <h3 class="legal-toc__heading">Privacy Policy</h3>
+            <ul class="legal-toc__list">
+              <li><a href="#legal-information-we-collect">1. Information We Collect</a></li>
+              <li><a href="#legal-how-we-use-your-information">2. How We Use Your Information</a></li>
+              <li><a href="#legal-fair-usage-policy-for-unlimited-plans">3. Fair Usage Policy for Unlimited Plans</a></li>
+              <li><a href="#legal-how-we-share-your-information">4. How We Share Your Information</a></li>
+              <li><a href="#legal-your-rights-and-choices">5. Your Rights and Choices</a></li>
+              <li><a href="#legal-data-retention">6. Data Retention</a></li>
+              <li><a href="#legal-data-security">7. Data Security</a></li>
+              <li><a href="#legal-international-data-transfers">8. International Data Transfers</a></li>
+              <li><a href="#legal-childrens-privacy">9. Children's Privacy</a></li>
+              <li><a href="#legal-changes-to-this-privacy-policy">10. Changes to This Privacy Policy</a></li>
+              <li><a href="#legal-contact-us">11. Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="legal-toc__heading">Terms &amp; Conditions</h3>
+            <ul class="legal-toc__list">
+              <li><a href="#legal-agreement-to-terms">1. Agreement to Terms</a></li>
+              <li><a href="#legal-eligibility">2. Eligibility</a></li>
+              <li><a href="#legal-account-registration">3. Account Registration</a></li>
+              <li><a href="#legal-purchases-and-payment">4. Purchases and Payment</a></li>
+              <li><a href="#legal-shipping-and-delivery">5. Shipping and Delivery</a></li>
+              <li><a href="#legal-content-ownership-and-usage">6. Content Ownership and Usage</a></li>
+              <li><a href="#legal-fair-usage-policy">7. Fair Usage Policy</a></li>
+              <li><a href="#legal-availability-errors-and-inaccuracies">8. Availability, Errors, and Inaccuracies</a></li>
+              <li><a href="#legal-termination-of-service">9. Termination of Service</a></li>
+              <li><a href="#legal-limitation-of-liability">10. Limitation of Liability</a></li>
+              <li><a href="#legal-governing-law-and-arbitration">11. Governing Law and Arbitration</a></li>
+              <li><a href="#legal-changes-to-terms">12. Changes to Terms</a></li>
+              <li><a href="#legal-contact-information">13. Contact Information</a></li>
+              <li><a href="#legal-your-consent-to-this-agreement">Your Consent to This Agreement</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ========== PRIVACY POLICY ========== -->
+      <article class="legal-section" id="privacy-policy">
+        <h2 class="legal-section__title">Our Privacy Policy</h2>
+        <p class="legal-section__meta"><strong>PELIPOST TECHNOLOGIES LLC dba PELIPOST</strong><br>Effective as of 11/30/24</p>
+
+        <div class="legal-block">
+          <p>We at Pelipost Technologies LLC ("Pelipost") respect your privacy and are committed to protecting the information you share with us. This Privacy Policy explains how we collect, use, and share your information when you visit our website, use our mobile application, or engage with our services ("Services"). By accessing our Services, you agree to the terms outlined in this Privacy Policy.</p>
+        </div>
+
+        <div class="legal-block" id="legal-information-we-collect">
+          <h3>1. Information We Collect</h3>
+          <h4>1.1 Personal Information</h4>
+          <p>We collect personal information you voluntarily provide to us, including but not limited to:</p>
+          <ul>
+            <li>Account Information: Name, email address, mailing address, telephone number, and payment details.</li>
+            <li>Loyalty Program: If you enroll, we collect and share necessary personal information with our partner, Loyalty Gator Inc. (<a href="https://www.loyaltygator.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>).</li>
+            <li>User-Generated Content: If you participate in forums, contests, surveys, or submit reviews, we collect associated details (e.g., name, email address, content submissions).</li>
+            <li>Communication: Any information provided through customer inquiries or correspondence with us.</li>
+          </ul>
+          <p>We do not knowingly collect personal information from users under 13. If we discover such information, we will delete it promptly.</p>
+
+          <h4>1.2 Usage Information</h4>
+          <p>We automatically collect certain information when you interact with our Services, such as:</p>
+          <ul>
+            <li>Technical Data: Device information (IP address, browser type, operating system).</li>
+            <li>Usage Data: Pages visited, time spent on pages, clicks, referring/exit URLs, and browsing behavior.</li>
+            <li>Cookies and Tracking: Cookies and pixel tags (web beacons) track your activity to enhance functionality and personalize your experience.</li>
+          </ul>
+        </div>
+
+        <div class="legal-block" id="legal-how-we-use-your-information">
+          <h3>2. How We Use Your Information</h3>
+          <p>We use your information to:</p>
+          <ul>
+            <li>Provide, maintain, and improve our Services.</li>
+            <li>Process transactions and fulfill your orders.</li>
+            <li>Communicate with you about updates, promotions, and surveys (you can opt-out anytime);</li>
+            <li>Analyze usage trends to enhance user experience.</li>
+            <li>Ensure compliance with legal obligations and respond to government or legal requests.</li>
+            <li>Address any excessive or abusive use of "unlimited" plans, as described in our <a href="#legal-fair-usage-policy">Fair Usage Policy</a>.</li>
+          </ul>
+        </div>
+
+        <div class="legal-block" id="legal-fair-usage-policy-for-unlimited-plans">
+          <h3>3. Fair Usage Policy for Unlimited Plans</h3>
+          <p>To ensure the equitable use of our services, users of select "unlimited" photo plans may be subject to usage monitoring. If a user exceeds 100 photos per week, Pelipost may consider the account to exceed typical personal usage. In such cases, Pelipost may implement a temporary limitation of 25 photos per week until usage levels return to normal. Users affected will be notified in advance.</p>
+        </div>
+
+        <div class="legal-block" id="legal-how-we-share-your-information">
+          <h3>4. How We Share Your Information</h3>
+          <p>We do not sell or rent your personal information to third parties. We may share your information with:</p>
+          <ul>
+            <li>Service Providers: Third-party vendors (e.g., Payment Depot, Loyalty Gator, Google Analytics) to process payments, manage accounts, or analyze data.</li>
+            <li>Legal Obligations: Government authorities or law enforcement if required by law or for fraud prevention.</li>
+            <li>Business Transfers: In the event of a merger, acquisition, or sale of assets.</li>
+          </ul>
+          <p>For a complete list of sub processors, please contact <a href="mailto:support@pelipost.com">support@pelipost.com</a>.</p>
+        </div>
+
+        <div class="legal-block" id="legal-your-rights-and-choices">
+          <h3>5. Your Rights and Choices</h3>
+          <h4>5.1 Access, Update, and Deletion</h4>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access and update your personal information via your account settings.</li>
+            <li>Request deletion of your personal information. Contact us at <a href="mailto:support@pelipost.com">support@pelipost.com</a> for assistance.</li>
+          </ul>
+
+          <h4>5.2 Cookie Preferences</h4>
+          <p>You can manage your cookie preferences in your browser settings. Note that disabling cookies may affect your experience with the Services.</p>
+
+          <h4>5.3 Opt-Out of Marketing Communications</h4>
+          <p>You can manage your cookie preferences in your browser settings. Note that disabling cookies may To opt-out of promotional emails, follow the unsubscribe link in the email or email us at <a href="mailto:support@pelipost.com">support@pelipost.com</a>.</p>
+
+          <h4>5.4 California Residents</h4>
+          <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), you have the right to:</p>
+          <ul>
+            <li>Know what personal information we collect.</li>
+            <li>Request access to or deletion of your personal information.</li>
+            <li>Opt-out of the sale or sharing of personal information.</li>
+          </ul>
+          <p>To exercise these rights, contact us at <a href="mailto:support@pelipost.com">support@pelipost.com</a>.</p>
+        </div>
+
+        <div class="legal-block" id="legal-data-retention">
+          <h3>6. Data Retention</h3>
+          <p>We retain personal information only as long as necessary for business and legal purposes. Usage data may be anonymized or deleted unless required for security, functionality, or legal obligations.</p>
+        </div>
+
+        <div class="legal-block" id="legal-data-security">
+          <h3>7. Data Security</h3>
+          <p>We implement industry-standard measures to protect your information. However, no system can guarantee complete security. You are responsible for safeguarding your account credentials.</p>
+        </div>
+
+        <div class="legal-block" id="legal-international-data-transfers">
+          <h3>8. International Data Transfers</h3>
+          <p>If you access our Services outside the United States, your information will be transferred and stored in the U.S., where privacy laws may differ from those in your jurisdiction.</p>
+        </div>
+
+        <div class="legal-block" id="legal-childrens-privacy">
+          <h3>9. Children's Privacy</h3>
+          <p>Our Services are not intended for children under 13. If you believe we have collected data from a child without parental consent, please contact us at <a href="mailto:support@pelipost.com">support@pelipost.com</a>.</p>
+        </div>
+
+        <div class="legal-block" id="legal-changes-to-this-privacy-policy">
+          <h3>10. Changes to This Privacy Policy</h3>
+          <p>This Privacy Policy is effective as of 11/30/2024. We may update it periodically. Any changes will be posted on this page, and your continued use of the Services constitutes acceptance.</p>
+        </div>
+
+        <div class="legal-block" id="legal-contact-us">
+          <h3>11. Contact Us</h3>
+          <p>For questions or concerns about this Privacy Policy, please contact:</p>
+          <p>Mailing Address:<br>2926 S. Falkenburg Road<br>Riverview, FL 33578</p>
+          <p>Via Email:<br><a href="mailto:support@pelipost.com">support@pelipost.com</a></p>
+        </div>
+      </article>
+
+      <hr class="legal-divider" aria-hidden="true">
+
+      <!-- ========== TERMS & CONDITIONS ========== -->
+      <article class="legal-section" id="terms-and-conditions">
+        <h2 class="legal-section__title">Terms &amp; Conditions</h2>
+        <p class="legal-section__meta"><strong>PELIPOST TECHNOLOGIES LLC dba PELIPOST</strong><br>Effective as of 11/30/24</p>
+
+        <div class="legal-block">
+          <p>The following Terms and Conditions ("Terms") govern your access to and use of the Pelipost website (<a href="https://pelipost.com" target="_blank" rel="noopener noreferrer">https://pelipost.com</a>) and mobile application (collectively, the "Service"). By using the Service, you agree to comply with these Terms. If you do not agree to these Terms, you may not use the Service.</p>
+        </div>
+
+        <div class="legal-block" id="legal-agreement-to-terms">
+          <h3>1. Agreement to Terms</h3>
+          <p>By using the Service, you agree to these Terms and our Privacy Policy, which governs the collection, use, and sharing of your data. If you do not agree, you must stop using the Service immediately.</p>
+        </div>
+
+        <div class="legal-block" id="legal-eligibility">
+          <h3>2. Eligibility</h3>
+          <p>The Service is not intended for individuals under the age of 18. By using the Service, you represent that you are at least 18 years old and have the legal capacity to enter into this agreement.</p>
+        </div>
+
+        <div class="legal-block" id="legal-account-registration">
+          <h3>3. Account Registration</h3>
+          <p>To access certain features, you may be required to create an account ("User Account"). You agree to:</p>
+          <ul>
+            <li>Provide accurate, current, and complete information during registration.</li>
+            <li>Maintain the security of your account credentials.</li>
+            <li>Notify us immediately of unauthorized use of your account.</li>
+          </ul>
+          <p>Pelipost is not responsible for any loss or damage arising from unauthorized use of your account.</p>
+        </div>
+
+        <div class="legal-block" id="legal-purchases-and-payment">
+          <h3>4. Purchases and Payment</h3>
+          <p>When you make a purchase through the Service, you agree to provide accurate payment information. All payments are processed through secure third-party providers. Pelipost reserves the right to cancel orders due to errors or suspected fraudulent activity. All purchases are final and non-refundable.</p>
+        </div>
+
+        <div class="legal-block" id="legal-shipping-and-delivery">
+          <h3>5. Shipping and Delivery</h3>
+          <p>We aim to deliver orders promptly but do not guarantee specific delivery dates. Title and risk of loss transfer to you upon shipment. Shipping charges and applicable taxes are your responsibility.</p>
+        </div>
+
+        <div class="legal-block" id="legal-content-ownership-and-usage">
+          <h3>6. Content Ownership and Usage</h3>
+          <p>You retain ownership of the content you upload through the Service, but you grant Pelipost a non-exclusive, royalty-free license to use your content for providing the Service. You represent that you have the rights to the content you upload and that it does not violate any laws or third-party rights.</p>
+        </div>
+
+        <div class="legal-block" id="legal-fair-usage-policy">
+          <h3>7. Fair Usage Policy</h3>
+          <p>Pelipost's PeliPALS photo membership plans are designed to provide members with a fair and cost-effective way to send photos to their loved ones. To ensure consistent service quality for all members, the following Fair Usage Policy applies to both the "Unlimited" and "Monthly Photo Membership" plans.</p>
+
+          <h4>7.0 Unlimited Plans</h4>
+          <p>For members enrolled in "Unlimited" photo plans, Pelipost reserves the right to monitor account activity to ensure fair and reasonable personal use. Accounts with usage patterns inconsistent with typical personal use — such as sending extremely high volumes of photos, activity that appears to be on behalf of multiple unrelated individuals, or activity suggesting commercial purposes — may be subject to temporary limits, account review, or suspension.</p>
+
+          <h4>7.1 Credit Allocation (All Plans)</h4>
+          <p>At the start of each billing cycle, members of the Photo Membership plan will receive a set allocation of photo-sending credits as specified in their specific plan. Credits automatically renew each month. Once monthly credits are used, members may continue to send photos at the regular per-photo price.</p>
+          <p>For <strong>Unlimited Plans</strong>, Pelipost assigns an initial allocation of credits designed to cover typical personal usage. If a member uses all of their initial credits, they may contact Pelipost Support at <strong>support@pelipost.com</strong> to request an increase. Pelipost reserves the right to review the account to ensure compliance with the Fair Usage Policy before approving additional credits.</p>
+          <p>If usage is found to be inconsistent with the Fair Usage Policy, Pelipost may choose to allocate additional credits, limit credits, or apply other restrictions as necessary to maintain service quality for all members.</p>
+
+          <h4>7.2 Case-by-Case Review</h4>
+          <p>If a member exhausts both their monthly credits (for prepaid plans) and any courtesy credit within the same billing cycle — or, for Unlimited plan users, repeatedly reaches levels of activity deemed excessive — further photo-sending privileges or credits will be considered on a case-by-case basis. Approval is at Pelipost's sole discretion and may depend on account history and usage patterns.</p>
+
+          <h4>7.3 Abuse Prevention (All Plans)</h4>
+          <p>Accounts showing usage inconsistent with typical personal use may be subject to review, limitation, or suspension.</p>
+          <p><strong>Examples of inconsistent use may include, but are not limited to:</strong></p>
+          <ul>
+            <li>Sending photos on behalf of multiple unrelated individuals from the same account.</li>
+            <li>Using the service to distribute bulk images that are not of a personal nature.</li>
+            <li>Activity patterns that suggest commercial or third-party reselling of photo-sending capacity.</li>
+            <li>Repeatedly exceeding normal usage levels in a way that disrupts service availability for others.</li>
+          </ul>
+
+          <h4>7.4 Notifications</h4>
+          <p>Members can view their available credits in their account dashboard (for prepaid plans). If credits are depleted or usage limits are applied, no additional credits or increases will be automatically granted beyond those outlined above unless approved by Pelipost.</p>
+
+          <h4>7.5 Right to Amend</h4>
+          <p>Pelipost reserves the right to amend this policy at any time to ensure fair access and quality service for all members.</p>
+
+          <h4>7.6 Agreement to Policy</h4>
+          <p>By subscribing to either the Unlimited or Monthly Photo Membership plan, members agree to abide by this Fair Usage Policy as part of Pelipost's Terms and Conditions.</p>
+        </div>
+
+        <div class="legal-block" id="legal-availability-errors-and-inaccuracies">
+          <h3>8. Availability, Errors, and Inaccuracies</h3>
+          <p>We are constantly updating product and service offerings on the Service. We may experience delays in updating information on the Service and in our advertising on other websites. The information found on the Service may contain errors or inaccuracies and may not be complete or current. Products or services may be mispriced, described inaccurately, or unavailable on the Service, and we cannot guarantee the accuracy or completeness of any information found on the Service. Therefore, we reserve the right to change or update information and correct errors, inaccuracies, or omissions at any time without prior notice.</p>
+        </div>
+
+        <div class="legal-block" id="legal-termination-of-service">
+          <h3>9. Termination of Service</h3>
+          <p>Pelipost reserves the right to suspend or terminate your access to the Service at any time, without notice, for violations of these Terms or for other reasons, including legal requirements.</p>
+        </div>
+
+        <div class="legal-block" id="legal-limitation-of-liability">
+          <h3>10. Limitation of Liability</h3>
+          <p>Pelipost is not liable for indirect, incidental, or consequential damages arising from your use of the Service. Our liability is limited to the amount you paid for the products or services giving rise to the claim.</p>
+        </div>
+
+        <div class="legal-block" id="legal-governing-law-and-arbitration">
+          <h3>11. Governing Law and Arbitration</h3>
+          <p>These Terms are governed by the laws of the State of Florida. Disputes will be resolved through binding arbitration administered by the American Arbitration Association in Tampa, Florida. Class actions are not permitted.</p>
+        </div>
+
+        <div class="legal-block" id="legal-changes-to-terms">
+          <h3>12. Changes to Terms</h3>
+          <p>Pelipost may update these Terms from time to time. Your continued use of the Service after any changes signifies your acceptance of the updated Terms.</p>
+        </div>
+
+        <div class="legal-block" id="legal-contact-information">
+          <h3>13. Contact Information</h3>
+          <p>For questions or concerns about these Terms, please contact us:</p>
+          <p>Mailing Address:<br>2926 S. Falkenburg Road<br>Riverview, FL 33578</p>
+          <p>Via Email:<br><a href="mailto:support@pelipost.com">support@pelipost.com</a></p>
+        </div>
+
+        <div class="legal-block" id="legal-your-consent-to-this-agreement">
+          <h3>Your Consent to This Agreement</h3>
+          <p>By accessing and using the Service, you consent to and agree to be bound by the terms of the foregoing Terms. If we decide to change these Terms, we will make an effort to post those changes on the Service so that you will always be able to understand the terms and conditions that apply to your use of the Service and/or the User Account. Your use of the Service and/or the User Account following any amendment of these Terms will signify your assent to and acceptance of its revised terms.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 3. FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Pelipost home">
+          <img src="./assets/pelipost-footer-logo-white-visible.png" alt="Pelipost" class="footer__logo-img" width="178" height="31">
+        </a>
+        <div class="footer__tagline">Mail and Connection, Simplified</div>
+        <p>Helping families stay connected with incarcerated loved ones through photos, letters, and more.</p>
+      </div>
+
+      <!-- Products -->
+      <div class="footer__col">
+        <h4>Products</h4>
+        <ul role="list">
+          <li><a href="./products.html#send">Photo Prints</a></li>
+          <li><a href="./products.html#send">Postcards</a></li>
+          <li><a href="./products.html#send">Letters</a></li>
+          <li><a href="./products.html#send">Greeting Cards</a></li>
+          <li><a href="./products.html#send">Activity Letters</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="./story.html">Our Story</a></li>
+          <li><a href="./index.html#community-heading">Community</a></li>
+          <li><a href="./global-incarcerated-loved-one-day.html">Global Incarcerated Loved One Day</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- For Facilities -->
+      <div class="footer__col">
+        <h4>For Facilities</h4>
+        <ul role="list">
+          <li><a href="./facilities.html">Overview</a></li>
+          <li><a href="./facilities.html">PelipostPRO</a></li>
+          <li><a href="./facilities.html">Case Studies</a></li>
+          <li><a href="./facilities.html">Request Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul role="list">
+          <li><a href="https://pelipost.zohodesk.com/portal/en/kb/customer-support" target="_blank" rel="noopener noreferrer">Knowledge Base</a></li>
+          <li><a href="https://jcalderon200713.github.io/pelipost-website-staging/contact.html">Contact Us</a></li>
+          <li><a href="https://pelipost.zohodesk.com/portal/en/kb/articles/find-an-inmate-inmate-locator" target="_blank" rel="noopener noreferrer">Facility Lookup</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        &copy; 2026 Pelipost, Inc. All rights reserved.
+        <a href="./legal.html" aria-current="page">Privacy Policy</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/pelipost/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/pelipostapp/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://x.com/pelipostapp" aria-label="X" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@pelipost" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
