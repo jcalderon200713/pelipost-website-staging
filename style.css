@@ -1806,3 +1806,8 @@
   margin-bottom: var(--space-6);
   margin-inline: auto;
 }
+
+.heading-accent {
+  font-family: var(--font-accent);
+  font-weight: 400;
+}
