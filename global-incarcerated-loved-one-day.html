@@ -500,16 +500,16 @@
       margin: var(--space-6) auto 0;
     }
 
-    /* Countdown to GILO Day */
+    /* Countdown to GILO Day (embedded as callout inside Meaning section) */
     .gilo-countdown {
-      padding-block: var(--space-12) var(--space-16);
-      background: var(--gilo-surface-tint);
-    }
-    .gilo-countdown__inner {
-      max-width: 760px;
-      margin-inline: auto;
+      grid-column: 1 / -1;
+      margin-top: var(--space-4);
+      background: #fff;
+      border: 1px solid rgba(13, 82, 112, 0.10);
+      border-radius: 20px;
+      padding: var(--space-8) var(--space-6);
+      box-shadow: 0 6px 20px rgba(13, 82, 112, 0.06);
       text-align: center;
-      padding-inline: var(--space-4);
     }
     .gilo-countdown__eyebrow {
       display: block;
@@ -535,11 +535,10 @@
       margin-inline: auto;
     }
     .gilo-countdown__cell {
-      background: #fff;
+      background: var(--gilo-surface-tint);
       border: 1px solid rgba(13, 82, 112, 0.10);
       border-radius: 14px;
       padding: var(--space-4) var(--space-2);
-      box-shadow: 0 4px 14px rgba(13, 82, 112, 0.06);
     }
     .gilo-countdown__num {
       display: block;
@@ -690,35 +689,6 @@
   </div>
 </header>
 
-<!-- ===== 2.5 COUNTDOWN ===== -->
-<section class="gilo-countdown" aria-labelledby="countdown-heading">
-  <div class="container gilo-countdown__inner">
-    <span class="gilo-countdown__eyebrow">Honoring our loved ones on</span>
-    <h2 class="gilo-countdown__title" id="countdown-heading">August 8th</h2>
-    <div class="gilo-countdown__grid" id="giloCountdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Time remaining until Global Incarcerated Loved One Day">
-      <div class="gilo-countdown__cell">
-        <span class="gilo-countdown__num" data-gilo-unit="days">000</span>
-        <span class="gilo-countdown__label">Days</span>
-      </div>
-      <div class="gilo-countdown__cell">
-        <span class="gilo-countdown__num" data-gilo-unit="hours">00</span>
-        <span class="gilo-countdown__label">Hours</span>
-      </div>
-      <div class="gilo-countdown__cell">
-        <span class="gilo-countdown__num" data-gilo-unit="minutes">00</span>
-        <span class="gilo-countdown__label">Minutes</span>
-      </div>
-      <div class="gilo-countdown__cell">
-        <span class="gilo-countdown__num" data-gilo-unit="seconds">00</span>
-        <span class="gilo-countdown__label">Seconds</span>
-      </div>
-    </div>
-    <noscript>
-      <p class="gilo-countdown__fallback">GILO Day is August 8th.</p>
-    </noscript>
-  </div>
-</section>
-
 <!-- ===== 3. VIDEO / VOICES ===== -->
 <section class="gilo-video" aria-labelledby="voices-heading">
   <div class="container">
@@ -753,6 +723,32 @@
       </div>
       <div class="gilo-meaning__image">
         <img src="./assets/gilo-day-fan-art.jpg" alt="Fan-created artwork for Global Incarcerated Loved One Day" loading="lazy">
+      </div>
+
+      <div class="gilo-countdown" aria-labelledby="countdown-heading">
+        <span class="gilo-countdown__eyebrow">Honoring our loved ones on</span>
+        <h3 class="gilo-countdown__title" id="countdown-heading">August 8th</h3>
+        <div class="gilo-countdown__grid" id="giloCountdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Time remaining until Global Incarcerated Loved One Day">
+          <div class="gilo-countdown__cell">
+            <span class="gilo-countdown__num" data-gilo-unit="days">000</span>
+            <span class="gilo-countdown__label">Days</span>
+          </div>
+          <div class="gilo-countdown__cell">
+            <span class="gilo-countdown__num" data-gilo-unit="hours">00</span>
+            <span class="gilo-countdown__label">Hours</span>
+          </div>
+          <div class="gilo-countdown__cell">
+            <span class="gilo-countdown__num" data-gilo-unit="minutes">00</span>
+            <span class="gilo-countdown__label">Minutes</span>
+          </div>
+          <div class="gilo-countdown__cell">
+            <span class="gilo-countdown__num" data-gilo-unit="seconds">00</span>
+            <span class="gilo-countdown__label">Seconds</span>
+          </div>
+        </div>
+        <noscript>
+          <p class="gilo-countdown__fallback">GILO Day is August 8th.</p>
+        </noscript>
       </div>
     </div>
   </div>
