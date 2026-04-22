@@ -234,12 +234,15 @@
     }
 
     .fac-how__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
       margin-bottom: var(--space-14);
     }
 
     .fac-how__eyebrow {
-      display: inline-block;
+      display: block;
       font-size: var(--text-xs);
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -253,9 +256,10 @@
       font-size: var(--text-xl);
       font-weight: 700;
       color: var(--color-text);
-      margin-bottom: var(--space-3);
+      margin: 0 0 var(--space-4);
       position: relative;
-      display: inline-block;
+      display: block;
+      text-align: center;
     }
 
     .fac-how__title::after {
@@ -271,8 +275,9 @@
     .fac-how__subtitle {
       font-size: var(--text-base);
       color: var(--color-text-muted);
-      max-width: 540px;
-      margin-inline: auto;
+      max-width: 600px;
+      margin: var(--space-4) auto 0;
+      text-align: center;
     }
 
     /* 4-step process */
@@ -1542,7 +1547,7 @@
     <div class="fac-how__header reveal">
       <div class="fac-how__eyebrow">Process Overview</div>
       <h2 class="fac-how__title" id="how-it-works-heading">Zero effort for your staff</h2>
-      <p class="fac-how__subtitle">From family submission to facility delivery — every step is automated, screened, and compliant.</p>
+      <p class="fac-how__subtitle">From family submission to facility delivery, every step is automated, screened, and compliant.</p>
     </div>
 
     <div class="fac-steps reveal-stagger">
@@ -1590,7 +1595,7 @@
           </svg>
         </div>
         <h3 class="fac-step__title">Print &amp; Ship</h3>
-        <p class="fac-step__desc">Approved mail is professionally printed in our facility and shipped via USPS — arriving in standard white envelopes, compliant with all rules.</p>
+        <p class="fac-step__desc">Approved mail is professionally printed in our facility and shipped via USPS, arriving in standard white envelopes, compliant with all rules.</p>
         <span class="fac-step__badge">2–5 Days</span>
       </div>
 
@@ -1605,7 +1610,7 @@
           </svg>
         </div>
         <h3 class="fac-step__title">Facility Receives</h3>
-        <p class="fac-step__desc">Mail arrives pre-screened, tracked, and fully compliant. Your staff distributes standard mail — no additional processing required.</p>
+        <p class="fac-step__desc">Mail arrives pre-screened, tracked, and fully compliant. Your staff distributes standard mail, no additional processing required.</p>
         <span class="fac-step__badge">Zero Overhead</span>
       </div>
     </div>
