@@ -1531,6 +1531,10 @@
   max-width: 560px;
 }
 
+.blog-hero .heading-accent {
+  color: #ffa400;
+}
+
 .blog-main {
   background: var(--color-bg-off);
 }
