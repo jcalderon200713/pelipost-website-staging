@@ -1825,3 +1825,7 @@
   font-size: 1.08em;
   line-height: 1;
 }
+
+.heading-accent--orange {
+  color: #ffa400;
+}
