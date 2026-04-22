@@ -500,6 +500,75 @@
       margin: var(--space-6) auto 0;
     }
 
+    /* Countdown to GILO Day */
+    .gilo-countdown {
+      padding-block: var(--space-12) var(--space-16);
+      background: var(--gilo-surface-tint);
+    }
+    .gilo-countdown__inner {
+      max-width: 760px;
+      margin-inline: auto;
+      text-align: center;
+      padding-inline: var(--space-4);
+    }
+    .gilo-countdown__eyebrow {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gilo-dark-blue);
+      margin-bottom: var(--space-3);
+    }
+    .gilo-countdown__title {
+      font-family: var(--font-accent);
+      font-size: var(--text-xl);
+      color: var(--gilo-aqua);
+      margin-bottom: var(--space-6);
+      line-height: 1.1;
+    }
+    .gilo-countdown__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-3);
+      max-width: 640px;
+      margin-inline: auto;
+    }
+    .gilo-countdown__cell {
+      background: #fff;
+      border: 1px solid rgba(13, 82, 112, 0.10);
+      border-radius: 14px;
+      padding: var(--space-4) var(--space-2);
+      box-shadow: 0 4px 14px rgba(13, 82, 112, 0.06);
+    }
+    .gilo-countdown__num {
+      display: block;
+      font-weight: 700;
+      color: var(--gilo-dark-blue);
+      font-size: clamp(1.75rem, 6vw, 2.75rem);
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .gilo-countdown__label {
+      display: block;
+      margin-top: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gilo-dark-blue);
+    }
+    .gilo-countdown__fallback {
+      color: var(--color-text-muted);
+      font-size: var(--text-base);
+      margin-top: var(--space-4);
+    }
+    @media (max-width: 480px) {
+      .gilo-countdown__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     /* Pulled quote section */
     .gilo-quote {
       padding-block: var(--space-16);
@@ -620,6 +689,35 @@
     <img class="gilo-hero__art" src="https://cdn.prod.website-files.com/63dd070fd49954451c3fc47d/649c3b66157dcc572ce7f2a5_Global%20Incarcerated%20Loved%20One%20Day_WHITE%20Background.png" alt="Global Incarcerated Loved One Day official logo" loading="lazy">
   </div>
 </header>
+
+<!-- ===== 2.5 COUNTDOWN ===== -->
+<section class="gilo-countdown" aria-labelledby="countdown-heading">
+  <div class="container gilo-countdown__inner">
+    <span class="gilo-countdown__eyebrow">Honoring our loved ones on</span>
+    <h2 class="gilo-countdown__title" id="countdown-heading">August 8th</h2>
+    <div class="gilo-countdown__grid" id="giloCountdown" role="timer" aria-live="polite" aria-atomic="true" aria-label="Time remaining until Global Incarcerated Loved One Day">
+      <div class="gilo-countdown__cell">
+        <span class="gilo-countdown__num" data-gilo-unit="days">000</span>
+        <span class="gilo-countdown__label">Days</span>
+      </div>
+      <div class="gilo-countdown__cell">
+        <span class="gilo-countdown__num" data-gilo-unit="hours">00</span>
+        <span class="gilo-countdown__label">Hours</span>
+      </div>
+      <div class="gilo-countdown__cell">
+        <span class="gilo-countdown__num" data-gilo-unit="minutes">00</span>
+        <span class="gilo-countdown__label">Minutes</span>
+      </div>
+      <div class="gilo-countdown__cell">
+        <span class="gilo-countdown__num" data-gilo-unit="seconds">00</span>
+        <span class="gilo-countdown__label">Seconds</span>
+      </div>
+    </div>
+    <noscript>
+      <p class="gilo-countdown__fallback">GILO Day is August 8th.</p>
+    </noscript>
+  </div>
+</section>
 
 <!-- ===== 3. VIDEO / VOICES ===== -->
 <section class="gilo-video" aria-labelledby="voices-heading">
@@ -886,5 +984,50 @@
 </footer>
 
 <script src="./app.js" defer></script>
+<script>
+  (function () {
+    var root = document.getElementById('giloCountdown');
+    if (!root) return;
+    var units = {
+      days: root.querySelector('[data-gilo-unit="days"]'),
+      hours: root.querySelector('[data-gilo-unit="hours"]'),
+      minutes: root.querySelector('[data-gilo-unit="minutes"]'),
+      seconds: root.querySelector('[data-gilo-unit="seconds"]')
+    };
+
+    function getTarget(now) {
+      var year = now.getFullYear();
+      var target = new Date(year, 7, 8, 0, 0, 0, 0);
+      if (now.getTime() >= target.getTime()) {
+        target = new Date(year + 1, 7, 8, 0, 0, 0, 0);
+      }
+      return target;
+    }
+
+    function pad(value, width) {
+      var str = String(value);
+      while (str.length < width) str = '0' + str;
+      return str;
+    }
+
+    function tick() {
+      var now = new Date();
+      var target = getTarget(now);
+      var diff = Math.max(0, target.getTime() - now.getTime());
+      var totalSeconds = Math.floor(diff / 1000);
+      var days = Math.floor(totalSeconds / 86400);
+      var hours = Math.floor((totalSeconds % 86400) / 3600);
+      var minutes = Math.floor((totalSeconds % 3600) / 60);
+      var seconds = totalSeconds % 60;
+      if (units.days) units.days.textContent = pad(days, 3);
+      if (units.hours) units.hours.textContent = pad(hours, 2);
+      if (units.minutes) units.minutes.textContent = pad(minutes, 2);
+      if (units.seconds) units.seconds.textContent = pad(seconds, 2);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
