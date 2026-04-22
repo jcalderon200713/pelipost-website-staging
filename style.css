@@ -1810,4 +1810,8 @@
 .heading-accent {
   font-family: var(--font-accent);
   font-weight: 400;
+  font-style: normal;
+  color: var(--color-brand-teal);
+  font-size: 1.08em;
+  line-height: 1;
 }
