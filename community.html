@@ -221,8 +221,11 @@
       object-fit: contain;
     }
     .comm-partner-card__logo--tall {
-      max-height: 160px;
-      max-width: 320px;
+      max-height: 200px;
+      max-width: 360px;
+    }
+    .comm-partner-card__logo-wrap:has(> .comm-partner-card__logo--tall) {
+      padding: var(--space-3) var(--space-6);
     }
     .comm-partner-card__body {
       background: var(--color-navy);
