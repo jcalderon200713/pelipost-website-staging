@@ -22,11 +22,15 @@
   <style>
     /* Community page scoped styles */
     .comm-hero {
+      position: relative;
       background: linear-gradient(180deg, var(--color-light-teal) 0%, #ffffff 100%);
       padding: var(--space-16) 0 var(--space-12);
       text-align: center;
+      overflow: hidden;
     }
     .comm-hero__inner {
+      position: relative;
+      z-index: 1;
       max-width: 880px;
       margin: 0 auto;
       padding: 0 var(--space-5);
@@ -47,6 +51,15 @@
       margin: 0 0 var(--space-5);
       line-height: 1.1;
     }
+    .comm-hero__title::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: var(--color-orange);
+      border-radius: 2px;
+      margin: var(--space-4) auto 0;
+    }
     .comm-hero__subtitle {
       font-size: var(--text-base);
       color: var(--color-text-muted);
@@ -59,6 +72,9 @@
     }
     .comm-section--alt {
       background: var(--color-bg-off);
+    }
+    .comm-section--accent {
+      background: var(--color-light-teal);
     }
     .comm-section__header {
       text-align: center;
@@ -79,6 +95,19 @@
       margin: 0;
     }
 
+    /* Inline arrow glyph used across card CTAs */
+    .comm-arrow {
+      display: inline;
+      font-style: normal;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: transform var(--transition-speed) ease;
+    }
+    a:hover > .comm-arrow,
+    a:focus-visible > .comm-arrow {
+      transform: translateX(3px);
+    }
+
     /* Program cards */
     .comm-programs__grid {
       display: grid;
@@ -86,24 +115,39 @@
       gap: var(--space-6);
     }
     .comm-card {
+      position: relative;
       background: #ffffff;
       border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: var(--space-7);
+      border-radius: 16px;
+      padding: var(--space-8) var(--space-7);
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      box-shadow: 0 1px 2px rgba(10, 46, 69, 0.04);
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
+      overflow: hidden;
+    }
+    .comm-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--color-orange);
+      opacity: 0.85;
     }
     .comm-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
+      border-color: var(--color-light-teal);
     }
     .comm-card__title {
       font-size: var(--text-lg);
       font-weight: 700;
       color: var(--color-navy);
       margin: 0;
+      padding-right: var(--space-2);
     }
     .comm-card__desc {
       color: var(--color-text);
@@ -112,14 +156,13 @@
       flex: 1;
     }
     .comm-card__link {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      margin-top: var(--space-2);
+      display: inline-block;
       color: var(--color-brand-teal);
       font-weight: 600;
       font-size: var(--text-sm);
       text-decoration: none;
+      white-space: normal;
     }
     .comm-card__link:hover,
     .comm-card__link:focus-visible {
@@ -131,6 +174,32 @@
       }
     }
 
+    /* Pelipostfam accent strip between sections */
+    .comm-fam {
+      padding: var(--space-10) 0;
+      background: var(--color-peach);
+    }
+    .comm-fam__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-5);
+      text-align: center;
+    }
+    .comm-fam__img {
+      display: block;
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    .comm-fam__caption {
+      margin: var(--space-4) 0 0;
+      color: var(--color-navy);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
     /* Partner cards */
     .comm-partners__grid {
       display: grid;
@@ -140,38 +209,46 @@
     .comm-partner-card {
       background: #ffffff;
       border: 1px solid var(--color-border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: var(--space-7);
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      box-shadow: 0 1px 2px rgba(10, 46, 69, 0.04);
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
     }
     .comm-partner-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
+      border-color: var(--color-light-teal);
     }
     .comm-partner-card__logo-wrap {
-      height: 72px;
+      background: var(--color-light-teal);
+      border-radius: 12px;
+      height: 120px;
+      padding: var(--space-4) var(--space-5);
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
     }
     .comm-partner-card__logo {
+      display: block;
       max-height: 72px;
-      max-width: 200px;
+      max-width: 180px;
       width: auto;
       height: auto;
       object-fit: contain;
     }
     .comm-partner-card__logo--tall {
-      max-height: 96px;
+      max-height: 88px;
+      max-width: 220px;
     }
     .comm-partner-card__name {
       font-size: var(--text-lg);
       font-weight: 700;
       color: var(--color-navy);
-      margin: 0;
+      margin: var(--space-2) 0 0;
+      text-align: center;
     }
     .comm-partner-card__desc {
       color: var(--color-text);
@@ -180,14 +257,13 @@
       flex: 1;
     }
     .comm-partner-card__link {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      margin-top: var(--space-2);
+      display: inline-block;
       color: var(--color-brand-teal);
       font-weight: 600;
       font-size: var(--text-sm);
       text-decoration: none;
+      white-space: normal;
     }
     .comm-partner-card__link:hover,
     .comm-partner-card__link:focus-visible {
@@ -196,6 +272,9 @@
     @media (max-width: 960px) {
       .comm-partners__grid {
         grid-template-columns: 1fr;
+      }
+      .comm-partner-card__logo-wrap {
+        height: 110px;
       }
     }
 
@@ -215,18 +294,20 @@
       padding: var(--space-6) var(--space-5);
       background: #ffffff;
       border: 2px solid var(--color-brand-teal);
-      border-radius: 12px;
+      border-radius: 14px;
       color: var(--color-brand-teal);
       font-weight: 700;
       text-decoration: none;
       line-height: 1.4;
-      transition: background var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+      box-shadow: 0 1px 2px rgba(10, 46, 69, 0.04);
+      transition: background var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     }
     .comm-cta-card:hover,
     .comm-cta-card:focus-visible {
       background: var(--color-brand-teal);
       color: #ffffff;
       transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
     @media (max-width: 900px) {
       .comm-involved__grid {
@@ -323,28 +404,27 @@
       <div class="comm-card">
         <h3 class="comm-card__title">Support Circles</h3>
         <p class="comm-card__desc">Find your people. Our Support Circles connect families who get it, because they're living it too. Whether you're a partner, a parent, or walking through this for the first time, there's a circle for you.</p>
-        <a href="./global-incarcerated-loved-one-day.html" class="comm-card__link">
-          Learn more
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="./global-incarcerated-loved-one-day.html" class="comm-card__link">Learn more<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="comm-card">
         <h3 class="comm-card__title">Global Incarcerated Loved One Day</h3>
         <p class="comm-card__desc">Every August 8th, families around the world pause to honor their incarcerated loved ones. GILO Day is a holiday we created to make the invisible visible and remind every family: you are not alone.</p>
-        <a href="./global-incarcerated-loved-one-day.html" class="comm-card__link">
-          Learn more
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="./global-incarcerated-loved-one-day.html" class="comm-card__link">Learn more<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="comm-card">
         <h3 class="comm-card__title">The Blog</h3>
         <p class="comm-card__desc">Real stories, practical tips, and insights from the Pelipost Family. Because no one should have to figure this out alone.</p>
-        <a href="./blog.html" class="comm-card__link">
-          Read the blog
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="./blog.html" class="comm-card__link">Read the blog<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== #PELIPOSTFAM ACCENT ===== -->
+<section class="comm-fam" aria-hidden="true">
+  <div class="comm-fam__inner">
+    <img src="./assets/pelipostfam-graphic.jpg" alt="" class="comm-fam__img" loading="lazy" decoding="async">
+    <p class="comm-fam__caption">You belong here. Welcome to the Pelipost Family.</p>
   </div>
 </section>
 
@@ -362,10 +442,7 @@
         </div>
         <h3 class="comm-partner-card__name">Prison Fellowship</h3>
         <p class="comm-partner-card__desc">We partner with Prison Fellowship to help Angel Tree families stay connected with their incarcerated loved ones. Through this program, families receive vouchers for free Pelipost orders, and our team helps verify accounts and guide them through placing orders, so kids and caregivers can easily send photos to their family members behind the wall.</p>
-        <a href="https://www.prisonfellowship.org/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">
-          Visit Prison Fellowship
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="https://www.prisonfellowship.org/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Prison Fellowship<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="comm-partner-card">
         <div class="comm-partner-card__logo-wrap">
@@ -373,10 +450,7 @@
         </div>
         <h3 class="comm-partner-card__name">Social Enterprise Alliance</h3>
         <p class="comm-partner-card__desc">Pelipost is a proud member of the Social Enterprise Alliance, a national network of mission-driven businesses working to create lasting social impact. Being part of SEA reinforces our commitment to doing business in a way that prioritizes people over profit, and puts the families we serve at the center of every decision we make.</p>
-        <a href="https://socialenterprise.us/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">
-          Visit Social Enterprise Alliance
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="https://socialenterprise.us/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Social Enterprise Alliance<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="comm-partner-card">
         <div class="comm-partner-card__logo-wrap">
@@ -384,10 +458,7 @@
         </div>
         <h3 class="comm-partner-card__name">Wire of Hope</h3>
         <p class="comm-partner-card__desc">Wire of Hope was founded on the same belief that drives Pelipost: that communication with incarcerated loved ones matters, and that letters and photographs have the power to change lives on the inside. We work together to make writing to a pen pal inside easier, because everyone deserves to be remembered.</p>
-        <a href="https://wireofhope.com/inmate-penpal-listings/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">
-          Browse free pen pal listings
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="https://wireofhope.com/inmate-penpal-listings/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Browse free pen pal listings<span class="comm-arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -401,9 +472,9 @@
       <p class="comm-section__subtitle">Whether you're a family member, a friend, an advocate, or an organization who wants to partner with us, there's a place for you here.</p>
     </div>
     <div class="comm-involved__grid reveal-stagger">
-      <a href="https://app.pelipost.com/" target="_blank" rel="noopener noreferrer" class="comm-cta-card">Send a photo to your loved one →</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUU7h6qjIUC7Aj_aitU5sTsTsBDpee7YokXOdmFlC-GHAWTA/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="comm-cta-card">Share your GILO Day story →</a>
-      <a href="mailto:marketing@pelipost.com" class="comm-cta-card">Partner with Pelipost →</a>
+      <a href="https://app.pelipost.com/" target="_blank" rel="noopener noreferrer" class="comm-cta-card">Send a photo to your loved one<span class="comm-arrow" aria-hidden="true">→</span></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUU7h6qjIUC7Aj_aitU5sTsTsBDpee7YokXOdmFlC-GHAWTA/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="comm-cta-card">Share your GILO Day story<span class="comm-arrow" aria-hidden="true">→</span></a>
+      <a href="mailto:marketing@pelipost.com" class="comm-cta-card">Partner with Pelipost<span class="comm-arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
