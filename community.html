@@ -24,9 +24,14 @@
     .comm-hero {
       position: relative;
       background: linear-gradient(180deg, var(--color-light-teal) 0%, #ffffff 100%);
-      padding: var(--space-16) 0 var(--space-12);
+      padding: var(--space-24) 0 var(--space-12);
       text-align: center;
       overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .comm-hero {
+        padding: var(--space-16) 0 var(--space-10);
+      }
     }
     .comm-hero__inner {
       position: relative;
