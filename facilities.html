@@ -2546,7 +2546,8 @@
         <h3 class="fac-demo__form-title">Request a Demo</h3>
         <p class="fac-demo__form-subtitle">A facility specialist will reach out within one business day.</p>
 
-        <form class="fac-form" id="demoForm" onsubmit="handleDemoSubmit(event)" novalidate>
+        <form class="fac-form" id="demoForm" action="https://formspree.io/f/xwvaapdn" method="POST" onsubmit="handleDemoSubmit(event)" novalidate>
+          <input type="hidden" name="_subject" value="PelipostPRO demo request">
           <div class="fac-form__row">
             <div class="fac-form__field">
               <label class="fac-form__label" for="demo-first-name">First Name</label>
@@ -2702,7 +2703,8 @@
       <h3 class="fac-modal__title" id="overviewModalTitle">Request a facility overview</h3>
       <p class="fac-modal__body">Leave your email and a member of our team will reach out to share more about PelipostPRO.</p>
 
-      <form id="overviewForm" novalidate>
+      <form id="overviewForm" action="https://formspree.io/f/xwvaapdn" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="PelipostPRO facility overview request">
         <div class="fac-modal__field">
           <label class="fac-modal__label" for="overviewEmail">Work Email</label>
           <input type="email" id="overviewEmail" name="email" class="fac-modal__input" placeholder="you@facility.gov" autocomplete="email" required>
@@ -2753,13 +2755,26 @@
   window.addEventListener('scroll', updateFacNav, { passive: true });
   updateFacNav(); // run on load
 
-  // Demo form handler
+  // Demo form handler — submits to Formspree via fetch, then swaps to success view
   window.handleDemoSubmit = function (e) {
     e.preventDefault();
     var form = document.getElementById('demoForm');
     var success = document.getElementById('demoSuccess');
-    form.style.display = 'none';
-    success.style.display = 'block';
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        form.submit();
+      }
+    }).catch(function () {
+      form.submit();
+    });
   };
 
   // ===== Overview Request Modal =====
@@ -2808,8 +2823,21 @@
   if (overviewForm) {
     overviewForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      overviewStep.style.display = 'none';
-      overviewSuccess.style.display = 'block';
+      var data = new FormData(overviewForm);
+      fetch(overviewForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          overviewStep.style.display = 'none';
+          overviewSuccess.style.display = 'block';
+        } else {
+          overviewForm.submit();
+        }
+      }).catch(function () {
+        overviewForm.submit();
+      });
     });
   }
 })();
