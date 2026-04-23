@@ -193,10 +193,9 @@
       background: #ffffff;
       border: 1px solid var(--color-border);
       border-radius: 16px;
-      padding: var(--space-12) var(--space-10);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: var(--space-6);
       box-shadow: 0 1px 2px rgba(10, 46, 69, 0.04);
       transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
     }
@@ -206,35 +205,42 @@
       border-color: var(--color-light-teal);
     }
     .comm-partner-card__logo-wrap {
-      background: var(--color-light-teal);
-      border-radius: 12px;
-      height: 120px;
-      padding: var(--space-4) var(--space-5);
+      background: #ffffff;
+      height: 180px;
+      padding: var(--space-8) var(--space-10);
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .comm-partner-card__logo {
       display: block;
-      max-height: 72px;
-      max-width: 180px;
+      max-height: 96px;
+      max-width: 220px;
       width: auto;
       height: auto;
       object-fit: contain;
     }
     .comm-partner-card__logo--tall {
-      max-height: 88px;
-      max-width: 220px;
+      max-height: 112px;
+      max-width: 240px;
+    }
+    .comm-partner-card__body {
+      background: var(--color-navy);
+      padding: var(--space-10) var(--space-10) var(--space-12);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      flex: 1;
     }
     .comm-partner-card__name {
       font-size: var(--text-lg);
       font-weight: 700;
-      color: var(--color-navy);
-      margin: var(--space-4) 0 0;
+      color: #ffffff;
+      margin: 0;
       text-align: center;
     }
     .comm-partner-card__desc {
-      color: var(--color-text);
+      color: #e8f4f8;
       line-height: 1.65;
       margin: 0;
       flex: 1;
@@ -242,7 +248,7 @@
     .comm-partner-card__link {
       margin-top: var(--space-4);
       display: inline-block;
-      color: var(--color-brand-teal);
+      color: var(--color-orange);
       font-weight: 600;
       font-size: var(--text-sm);
       text-decoration: none;
@@ -251,17 +257,18 @@
     .comm-partner-card__link:hover,
     .comm-partner-card__link:focus-visible {
       text-decoration: underline;
+      color: var(--color-orange-hover);
     }
     @media (max-width: 960px) {
       .comm-partners__grid {
         grid-template-columns: 1fr;
       }
-      .comm-partner-card {
-        padding: var(--space-10) var(--space-8);
-        gap: var(--space-5);
-      }
       .comm-partner-card__logo-wrap {
-        height: 110px;
+        height: 160px;
+        padding: var(--space-6) var(--space-8);
+      }
+      .comm-partner-card__body {
+        padding: var(--space-8) var(--space-8) var(--space-10);
       }
     }
 
@@ -419,25 +426,31 @@
         <div class="comm-partner-card__logo-wrap">
           <img src="./assets/prison-fellowship-logo.png" alt="Prison Fellowship" class="comm-partner-card__logo" loading="lazy" decoding="async">
         </div>
-        <h3 class="comm-partner-card__name">Prison Fellowship</h3>
-        <p class="comm-partner-card__desc">We partner with Prison Fellowship to help Angel Tree families stay connected with their incarcerated loved ones. Through this program, families receive vouchers for free Pelipost orders, and our team helps verify accounts and guide them through placing orders, so kids and caregivers can easily send photos to their family members behind the wall.</p>
-        <a href="https://www.prisonfellowship.org/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Prison Fellowship<span class="comm-arrow" aria-hidden="true">→</span></a>
+        <div class="comm-partner-card__body">
+          <h3 class="comm-partner-card__name">Prison Fellowship</h3>
+          <p class="comm-partner-card__desc">We partner with Prison Fellowship to help Angel Tree families stay connected with their incarcerated loved ones. Through this program, families receive vouchers for free Pelipost orders, and our team helps verify accounts and guide them through placing orders, so kids and caregivers can easily send photos to their family members behind the wall.</p>
+          <a href="https://www.prisonfellowship.org/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Prison Fellowship<span class="comm-arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
       <div class="comm-partner-card">
         <div class="comm-partner-card__logo-wrap">
           <img src="./assets/sea-logo.svg" alt="Social Enterprise Alliance" class="comm-partner-card__logo" loading="lazy" decoding="async">
         </div>
-        <h3 class="comm-partner-card__name">Social Enterprise Alliance</h3>
-        <p class="comm-partner-card__desc">Pelipost is a proud member of the Social Enterprise Alliance, a national network of mission-driven businesses working to create lasting social impact. Being part of SEA reinforces our commitment to doing business in a way that prioritizes people over profit, and puts the families we serve at the center of every decision we make.</p>
-        <a href="https://socialenterprise.us/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Social Enterprise Alliance<span class="comm-arrow" aria-hidden="true">→</span></a>
+        <div class="comm-partner-card__body">
+          <h3 class="comm-partner-card__name">Social Enterprise Alliance</h3>
+          <p class="comm-partner-card__desc">Pelipost is a proud member of the Social Enterprise Alliance, a national network of mission-driven businesses working to create lasting social impact. Being part of SEA reinforces our commitment to doing business in a way that prioritizes people over profit, and puts the families we serve at the center of every decision we make.</p>
+          <a href="https://socialenterprise.us/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Visit Social Enterprise Alliance<span class="comm-arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
       <div class="comm-partner-card">
         <div class="comm-partner-card__logo-wrap">
           <img src="./assets/wire-of-hope-partnership-logo.jpg" alt="Wire of Hope" class="comm-partner-card__logo comm-partner-card__logo--tall" loading="lazy" decoding="async">
         </div>
-        <h3 class="comm-partner-card__name">Wire of Hope</h3>
-        <p class="comm-partner-card__desc">Wire of Hope was founded on the same belief that drives Pelipost: that communication with incarcerated loved ones matters, and that letters and photographs have the power to change lives on the inside. We work together to make writing to a pen pal inside easier, because everyone deserves to be remembered.</p>
-        <a href="https://wireofhope.com/inmate-penpal-listings/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Browse free pen pal listings<span class="comm-arrow" aria-hidden="true">→</span></a>
+        <div class="comm-partner-card__body">
+          <h3 class="comm-partner-card__name">Wire of Hope</h3>
+          <p class="comm-partner-card__desc">Wire of Hope was founded on the same belief that drives Pelipost: that communication with incarcerated loved ones matters, and that letters and photographs have the power to change lives on the inside. We work together to make writing to a pen pal inside easier, because everyone deserves to be remembered.</p>
+          <a href="https://wireofhope.com/inmate-penpal-listings/" target="_blank" rel="noopener noreferrer" class="comm-partner-card__link">Browse free pen pal listings<span class="comm-arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
   </div>
