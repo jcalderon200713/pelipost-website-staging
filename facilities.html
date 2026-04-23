@@ -1424,6 +1424,168 @@
         padding-left: var(--space-3);
       }
     }
+
+    /* ===== OVERVIEW REQUEST MODAL ===== */
+    .fac-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 46, 69, 0.72);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    .fac-modal.is-open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .fac-modal__dialog {
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      max-width: 480px;
+      width: 100%;
+      padding: var(--space-8) var(--space-6);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.24);
+      position: relative;
+      transform: translateY(8px);
+      transition: transform 220ms ease;
+      text-align: center;
+    }
+
+    .fac-modal.is-open .fac-modal__dialog {
+      transform: translateY(0);
+    }
+
+    @media (min-width: 640px) {
+      .fac-modal__dialog {
+        padding: var(--space-10) var(--space-8);
+      }
+    }
+
+    .fac-modal__close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      color: #6b7280;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 150ms ease, color 150ms ease;
+    }
+
+    .fac-modal__close:hover {
+      background: #f3f4f6;
+      color: #0d5270;
+    }
+
+    .fac-modal__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #fff5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5);
+      color: #ffa400;
+    }
+
+    .fac-modal__title {
+      font-size: var(--text-xl, 1.5rem);
+      font-weight: 700;
+      color: #0d5270;
+      margin-bottom: var(--space-3);
+      line-height: 1.25;
+    }
+
+    .fac-modal__body {
+      font-size: var(--text-base);
+      color: #2d2f34;
+      line-height: 1.6;
+      margin-bottom: var(--space-6);
+    }
+
+    .fac-modal__field {
+      text-align: left;
+      margin-bottom: var(--space-4);
+    }
+
+    .fac-modal__label {
+      display: block;
+      font-size: var(--text-sm, 0.875rem);
+      font-weight: 600;
+      color: #0d5270;
+      margin-bottom: var(--space-2);
+    }
+
+    .fac-modal__input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: var(--text-base);
+      color: #2d2f34;
+      background: #fff;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .fac-modal__input:focus {
+      outline: none;
+      border-color: #ffa400;
+      box-shadow: 0 0 0 3px rgba(255, 164, 0, 0.15);
+    }
+
+    .fac-modal__submit {
+      width: 100%;
+      background: #ffa400;
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: var(--text-base);
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 150ms ease, transform 100ms ease;
+    }
+
+    .fac-modal__submit:hover {
+      background: #e69400;
+    }
+
+    .fac-modal__submit:active {
+      transform: translateY(1px);
+    }
+
+    .fac-modal__privacy {
+      margin-top: var(--space-4);
+      font-size: var(--text-xs, 0.75rem);
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .fac-modal__success-icon {
+      background: #dcfce7;
+      color: #16a34a;
+    }
   </style>
 </head>
 <body>
@@ -1519,7 +1681,7 @@
 
     <div class="fac-hero__ctas reveal">
       <a href="#demo-section" class="btn btn--primary btn--large">Request a Demo</a>
-      <a href="#" class="btn btn--ghost-white btn--large">Download Overview</a>
+      <a href="#" class="btn btn--ghost-white btn--large" id="overviewTrigger">Request Overview</a>
     </div>
 
     <!-- Stat Cards -->
@@ -2201,6 +2363,55 @@
   </div>
 </footer>
 
+<!-- ===== OVERVIEW REQUEST MODAL ===== -->
+<div class="fac-modal" id="overviewModal" role="dialog" aria-modal="true" aria-labelledby="overviewModalTitle" aria-hidden="true">
+  <div class="fac-modal__dialog">
+    <button type="button" class="fac-modal__close" id="overviewClose" aria-label="Close dialog">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="18" height="18">
+        <path d="M5 5l10 10M15 5L5 15"/>
+      </svg>
+    </button>
+
+    <!-- Step 1: Form -->
+    <div id="overviewStep">
+      <div class="fac-modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
+          <path d="M4 6h16v12H4z"/>
+          <path d="M4 6l8 7 8-7"/>
+        </svg>
+      </div>
+      <h3 class="fac-modal__title" id="overviewModalTitle">Request a facility overview</h3>
+      <p class="fac-modal__body">Leave your email and a member of our team will reach out to share more about PelipostPRO.</p>
+
+      <form id="overviewForm" novalidate>
+        <div class="fac-modal__field">
+          <label class="fac-modal__label" for="overviewEmail">Work Email</label>
+          <input type="email" id="overviewEmail" name="email" class="fac-modal__input" placeholder="you@facility.gov" autocomplete="email" required>
+        </div>
+        <button type="submit" class="fac-modal__submit">
+          Send Request
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16">
+            <path d="M3 9h12M11 5l4 4-4 4"/>
+          </svg>
+        </button>
+        <p class="fac-modal__privacy">We take your privacy seriously. Your email will only be used to discuss mail room solutions for your facility. We never spam and we never sell your information.</p>
+      </form>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div id="overviewSuccess" style="display:none;">
+      <div class="fac-modal__icon fac-modal__success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
+          <path d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="fac-modal__title">Request received</h3>
+      <p class="fac-modal__body">Thanks. A member of our team will reach out shortly to share a facility overview and answer your questions.</p>
+      <button type="button" class="fac-modal__submit" onclick="document.getElementById('overviewClose').click()">Close</button>
+    </div>
+  </div>
+</div>
+
 <script src="./app.js" defer></script>
 <script>
 /* ===== FACILITIES PAGE SCRIPTS ===== */
@@ -2231,6 +2442,57 @@
     form.style.display = 'none';
     success.style.display = 'block';
   };
+
+  // ===== Overview Request Modal =====
+  var overviewTrigger = document.getElementById('overviewTrigger');
+  var overviewModal = document.getElementById('overviewModal');
+  var overviewClose = document.getElementById('overviewClose');
+  var overviewForm = document.getElementById('overviewForm');
+  var overviewStep = document.getElementById('overviewStep');
+  var overviewSuccess = document.getElementById('overviewSuccess');
+  var overviewEmail = document.getElementById('overviewEmail');
+  var lastFocus = null;
+
+  function openOverviewModal(e) {
+    if (e) e.preventDefault();
+    lastFocus = document.activeElement;
+    overviewModal.classList.add('is-open');
+    overviewModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Reset to form view each time it opens
+    overviewStep.style.display = 'block';
+    overviewSuccess.style.display = 'none';
+    if (overviewForm) overviewForm.reset();
+    setTimeout(function () { if (overviewEmail) overviewEmail.focus(); }, 50);
+  }
+
+  function closeOverviewModal() {
+    overviewModal.classList.remove('is-open');
+    overviewModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  if (overviewTrigger) overviewTrigger.addEventListener('click', openOverviewModal);
+  if (overviewClose) overviewClose.addEventListener('click', closeOverviewModal);
+  if (overviewModal) {
+    overviewModal.addEventListener('click', function (e) {
+      if (e.target === overviewModal) closeOverviewModal();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overviewModal && overviewModal.classList.contains('is-open')) {
+      closeOverviewModal();
+    }
+  });
+
+  if (overviewForm) {
+    overviewForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      overviewStep.style.display = 'none';
+      overviewSuccess.style.display = 'block';
+    });
+  }
 })();
 </script>
 </body>
