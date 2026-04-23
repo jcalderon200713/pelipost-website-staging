@@ -2585,6 +2585,7 @@
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9h12M11 5l4 4-4 4"/></svg>
           </button>
 
+          <p id="demoError" role="alert" style="display:none;margin-top:var(--space-3);font-size:var(--text-sm);color:#b91c1c;"></p>
           <p class="fac-form__privacy">Your information is never shared. By submitting, you agree to our <a href="#" style="color:var(--color-text-muted);text-decoration:underline;">Privacy Policy</a>.</p>
         </form>
 
@@ -2715,6 +2716,7 @@
             <path d="M3 9h12M11 5l4 4-4 4"/>
           </svg>
         </button>
+        <p id="overviewError" role="alert" style="display:none;margin-top:var(--space-3);font-size:var(--text-sm);color:#b91c1c;"></p>
         <p class="fac-modal__privacy">We take your privacy seriously. Your email will only be used to discuss mail room solutions for your facility. We never spam and we never sell your information.</p>
       </form>
     </div>
@@ -2755,12 +2757,18 @@
   window.addEventListener('scroll', updateFacNav, { passive: true });
   updateFacNav(); // run on load
 
-  // Demo form handler — submits to Formspree via fetch, then swaps to success view
+  // Demo form handler — submits to Formspree via AJAX (official Vanilla JS pattern)
   window.handleDemoSubmit = function (e) {
     e.preventDefault();
     var form = document.getElementById('demoForm');
     var success = document.getElementById('demoSuccess');
+    var errorEl = document.getElementById('demoError');
+    var submitBtn = form.querySelector('button[type="submit"]');
     var data = new FormData(form);
+
+    if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+    if (submitBtn) submitBtn.disabled = true;
+
     fetch(form.action, {
       method: 'POST',
       body: data,
@@ -2768,12 +2776,25 @@
     }).then(function (res) {
       if (res.ok) {
         form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        form.submit();
+        if (success) success.style.display = 'block';
+        return;
       }
-    }).catch(function () {
-      form.submit();
+      return res.json().then(function (body) {
+        var msg = 'Something went wrong. Please try again or email us directly.';
+        if (body && Array.isArray(body.errors) && body.errors.length) {
+          msg = body.errors.map(function (er) { return er.message; }).join(', ');
+        }
+        throw new Error(msg);
+      }).catch(function (err) {
+        throw (err instanceof Error) ? err : new Error('Something went wrong. Please try again.');
+      });
+    }).catch(function (err) {
+      if (errorEl) {
+        errorEl.textContent = (err && err.message) ? err.message : 'Network error. Please try again.';
+        errorEl.style.display = 'block';
+      }
+    }).then(function () {
+      if (submitBtn) submitBtn.disabled = false;
     });
   };
 
@@ -2823,7 +2844,13 @@
   if (overviewForm) {
     overviewForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      var errorEl = document.getElementById('overviewError');
+      var submitBtn = overviewForm.querySelector('button[type="submit"]');
       var data = new FormData(overviewForm);
+
+      if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+      if (submitBtn) submitBtn.disabled = true;
+
       fetch(overviewForm.action, {
         method: 'POST',
         body: data,
@@ -2832,11 +2859,24 @@
         if (res.ok) {
           overviewStep.style.display = 'none';
           overviewSuccess.style.display = 'block';
-        } else {
-          overviewForm.submit();
+          return;
         }
-      }).catch(function () {
-        overviewForm.submit();
+        return res.json().then(function (body) {
+          var msg = 'Something went wrong. Please try again.';
+          if (body && Array.isArray(body.errors) && body.errors.length) {
+            msg = body.errors.map(function (er) { return er.message; }).join(', ');
+          }
+          throw new Error(msg);
+        }).catch(function (err) {
+          throw (err instanceof Error) ? err : new Error('Something went wrong. Please try again.');
+        });
+      }).catch(function (err) {
+        if (errorEl) {
+          errorEl.textContent = (err && err.message) ? err.message : 'Network error. Please try again.';
+          errorEl.style.display = 'block';
+        }
+      }).then(function () {
+        if (submitBtn) submitBtn.disabled = false;
       });
     });
   }
