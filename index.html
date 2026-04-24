@@ -20,14 +20,30 @@
   <link rel="stylesheet" href="./style.css">
 
   <style>
-    /* Hero micro-CTA */
+    /* Hero trust stat row (prominent) */
+    .hero__trust {
+      margin-top: var(--space-4);
+      gap: var(--space-5);
+    }
+    .hero__trust .hero__trust-item {
+      font-size: var(--text-base);
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+      gap: 8px;
+    }
+    .hero__trust .hero__trust-item svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Hero micro-CTA (subtle, below trust row) */
     .hero__micro-cta {
       margin-top: var(--space-3);
       margin-bottom: var(--space-2);
     }
     .hero__micro-cta-link {
-      font-size: var(--text-sm);
-      color: rgba(255, 255, 255, 0.8);
+      font-size: var(--text-xs);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       font-weight: 500;
       border-bottom: 1px solid transparent;
@@ -243,9 +259,6 @@
         <a href="https://app.pelipost.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">Send Now</a>
         <a href="#download-app" class="btn btn--ghost-white btn--large">Download the App</a>
       </div>
-      <div class="hero__micro-cta">
-        <a href="./facilities.html" class="hero__micro-cta-link">Correctional facility administrator? See how PelipostPRO serves facilities →</a>
-      </div>
       <div class="hero__trust">
         <span class="hero__trust-item">
           <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
@@ -259,6 +272,9 @@
           <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
           5–7 day delivery
         </span>
+      </div>
+      <div class="hero__micro-cta">
+        <a href="./facilities.html" class="hero__micro-cta-link">Correctional facility administrator? See how PelipostPRO serves facilities →</a>
       </div>
     </div>
     <div class="hero__image">
