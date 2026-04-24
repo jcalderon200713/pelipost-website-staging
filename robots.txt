@@ -1,0 +1,11 @@
+# robots.txt for Pelipost
+# https://www.pelipost.com
+
+User-agent: *
+Allow: /
+
+# Don't index pages meant for internal navigation only
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://www.pelipost.com/sitemap.xml
