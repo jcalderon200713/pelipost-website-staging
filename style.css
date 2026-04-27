@@ -137,6 +137,24 @@
   color: var(--color-brand-teal);
 }
 
+/* Active header nav link, standardized across all pages */
+.nav__links > li > a[aria-current="page"],
+.nav__links > li > a.nav__link--active,
+.nav__links > li > .nav__submenu-parent[data-parent-current="true"] {
+  color: var(--color-orange);
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 0 var(--color-orange);
+  padding-bottom: 4px;
+}
+
+/* Mobile menu active state, color only to avoid hiding tap targets */
+.mobile-menu__links a[aria-current="page"],
+.mobile-menu__links a.nav__link--active,
+.mobile-menu__links .mobile-menu__parent-link[data-parent-current="true"] {
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
 .nav__actions {
   display: flex;
   align-items: center;
