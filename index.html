@@ -90,10 +90,10 @@
     }
     .home-partners__logos {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       align-items: center;
       justify-items: center;
-      gap: var(--space-8);
+      gap: var(--space-7);
     }
     .home-partners__logo-link {
       display: inline-flex;
@@ -115,12 +115,22 @@
       height: 112px;
       max-width: 240px;
     }
+    .home-partners__logo--pledge-1-percent {
+      height: 96px;
+      max-width: 120px;
+    }
     .home-partners__logo-link:hover .home-partners__logo,
     .home-partners__logo-link:focus-visible .home-partners__logo {
       opacity: 1;
       filter: none;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .home-partners__logos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+      }
+    }
+    @media (max-width: 700px) {
       .home-partners__logos {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-6);
@@ -136,6 +146,9 @@
       }
       .home-partners__logo--wire-of-hope {
         height: 88px;
+      }
+      .home-partners__logo--pledge-1-percent {
+        height: 80px;
       }
     }
 
@@ -380,6 +393,9 @@
       </a>
       <a href="https://wireofhope.com/" target="_blank" rel="noopener noreferrer" class="home-partners__logo-link" aria-label="Wire of Hope (opens in a new tab)">
         <img src="./assets/wire-of-hope-partnership-logo.jpg" alt="Wire of Hope" class="home-partners__logo home-partners__logo--wire-of-hope" height="112" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.pledge1percent.org/" target="_blank" rel="noopener noreferrer" class="home-partners__logo-link" aria-label="Pledge 1% (opens in a new tab)">
+        <img src="./assets/pledge-1-percent-logo.jpg" alt="Pledge 1% logo" class="home-partners__logo home-partners__logo--pledge-1-percent" height="96" loading="lazy" decoding="async">
       </a>
     </div>
   </div>
