@@ -44,62 +44,6 @@
        Navy/slate corporate tone: #0a2e45 primary
     ============================================================ */
 
-    /* ===== NAV OVERRIDES FOR NAVY HERO =====
-       On this page the hero is navy, so the transparent nav needs
-       white text initially. The existing nav background is white/95
-       but we switch it to transparent navy when at the top.
-    */
-    .nav--facilities-top {
-      background: rgba(10, 46, 69, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .nav--facilities-top .nav__links a,
-    .nav--facilities-top .nav__hamburger,
-    .nav--facilities-top .nav__logo-img {
-      /* Use the white logo when nav is transparent over dark hero */
-    }
-
-    .nav--facilities-top .nav__logo .nav__logo-img--black {
-      display: none;
-    }
-    .nav--facilities-top .nav__logo .nav__logo-img--white {
-      display: block;
-    }
-    .nav--facilities-scrolled .nav__logo .nav__logo-img--black {
-      display: block;
-    }
-    .nav--facilities-scrolled .nav__logo .nav__logo-img--white {
-      display: none;
-    }
-
-    /* Default: show black logo */
-    .nav__logo .nav__logo-img--white { display: none; }
-    .nav__logo .nav__logo-img--black { display: block; }
-
-    /* When at top (over navy hero) show white logo and white text */
-    .nav--facilities-top .nav__links a {
-      color: rgba(255, 255, 255, 0.88);
-    }
-    .nav--facilities-top .nav__links a:hover {
-      color: #fff;
-    }
-    .nav--facilities-top .nav__links a.nav__link--active {
-      color: var(--color-orange);
-    }
-    .nav--facilities-top .nav__hamburger {
-      color: rgba(255, 255, 255, 0.9);
-    }
-    .nav--facilities-top .btn--ghost-dark {
-      color: rgba(255, 255, 255, 0.88);
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-    .nav--facilities-top .btn--ghost-dark:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-
     /* Active nav link */
     .nav__link--active {
       color: var(--color-orange) !important;
@@ -1845,12 +1789,11 @@
 <a href="#main" class="sr-only" style="position:fixed;top:8px;left:8px;z-index:999;background:#ffa400;color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.className='sr-only';">Skip to content</a>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--facilities-top" id="facilityNav" role="navigation" aria-label="Main navigation">
+<nav class="nav" id="facilityNav" role="navigation" aria-label="Main navigation">
   <div class="container nav__inner">
     <!-- Logo, dual images for light/dark switching -->
     <a href="./index.html" class="nav__logo" aria-label="Pelipost home">
-      <img src="./assets/pelipost-footer-logo-white-no-tagline.png" alt="Pelipost" class="nav__logo-img nav__logo-img--white" width="164" height="29">
-      <img src="./assets/pelipost-logo-no-tagline-v2.jpg" alt="Pelipost" class="nav__logo-img nav__logo-img--black" width="172" height="36">
+      <img src="./assets/pelipost-logo-no-tagline-v2.jpg" alt="Pelipost" class="nav__logo-img" width="172" height="36">
     </a>
 
     <!-- Nav Links -->
@@ -2783,22 +2726,6 @@
 /* ===== FACILITIES PAGE SCRIPTS ===== */
 (function () {
   'use strict';
-
-  // Nav transparent-on-dark behavior for facilities page
-  var nav = document.getElementById('facilityNav');
-
-  function updateFacNav() {
-    if (window.scrollY > 60) {
-      nav.classList.remove('nav--facilities-top');
-      nav.classList.add('nav--facilities-scrolled');
-    } else {
-      nav.classList.add('nav--facilities-top');
-      nav.classList.remove('nav--facilities-scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', updateFacNav, { passive: true });
-  updateFacNav(); // run on load
 
   // Demo form handler, submits to Formspree via AJAX (official Vanilla JS pattern)
   window.handleDemoSubmit = function (e) {
